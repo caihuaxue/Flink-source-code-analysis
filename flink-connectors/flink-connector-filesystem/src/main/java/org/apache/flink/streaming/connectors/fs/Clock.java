@@ -19,6 +19,7 @@
 package org.apache.flink.streaming.connectors.fs;
 
 /**
+ * 能提供当前时间的时钟
  * A clock that can provide the current time.
  *
  *

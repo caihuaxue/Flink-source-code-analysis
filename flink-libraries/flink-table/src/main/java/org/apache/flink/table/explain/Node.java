@@ -21,6 +21,7 @@ package org.apache.flink.table.explain;
 import java.util.List;
 
 /**
+ * 执行计划的字段层次结构。
  * Field hierarchy of an execution plan.
  */
 public class Node {

@@ -24,18 +24,19 @@ import org.apache.flink.util.FlinkException;
 
 /**
  * A descriptor to deploy a cluster (e.g. Yarn or Mesos) and return a Client for Cluster communication.
- *
+ * 部署集群（Yarn或者Mesos)并且返回一个与集群交互的Client.
  * @param <T> Type of the cluster id
  */
 public interface ClusterDescriptor<T> extends AutoCloseable {
 
 	/**
 	 * Returns a String containing details about the cluster (NodeManagers, available memory, ...).
-	 *
+	 * 返回集群的相关具体信息，比如NodeManagers，可用内存等等
 	 */
 	String getClusterDescription();
 
 	/**
+	 * 恢复现有的Flink集群
 	 * Retrieves an existing Flink Cluster.
 	 * @param clusterId The unique identifier of the running cluster
 	 * @return Client for the cluster
@@ -44,6 +45,7 @@ public interface ClusterDescriptor<T> extends AutoCloseable {
 	ClusterClient<T> retrieve(T clusterId) throws ClusterRetrieveException;
 
 	/**
+	 * 触发集群的部署
 	 * Triggers deployment of a cluster.
 	 * @param clusterSpecification Cluster specification defining the cluster to deploy
 	 * @return Client for the cluster
@@ -52,6 +54,7 @@ public interface ClusterDescriptor<T> extends AutoCloseable {
 	ClusterClient<T> deploySessionCluster(ClusterSpecification clusterSpecification) throws ClusterDeploymentException;
 
 	/**
+	 * 在集群中使用给定作业部署每个作业群集
 	 * Deploys a per-job cluster with the given job on the cluster.
 	 *
 	 * @param clusterSpecification Initial cluster specification with which the Flink cluster is launched
@@ -68,7 +71,7 @@ public interface ClusterDescriptor<T> extends AutoCloseable {
 
 	/**
 	 * Terminates the cluster with the given cluster id.
-	 *
+	 * 终止集群
 	 * @param clusterId identifying the cluster to shut down
 	 * @throws FlinkException if the cluster could not be terminated
 	 */

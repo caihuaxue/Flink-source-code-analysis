@@ -27,6 +27,8 @@ import java.net.URL;
 import java.util.List;
 
 /**
+ * 实例化在运行通过预先配置的客户端连接提交的作业时要使用的环境的工厂。
+ * 例如当job通过命令行提交时
  * The factory that instantiates the environment to be used when running jobs that are
  * submitted through a pre-configured client connection.
  * This happens for example when a job is submitted from the command line.

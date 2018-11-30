@@ -22,6 +22,7 @@ import org.apache.flink.annotation.PublicEvolving;
 
 /**
   * Exception for all errors occurring during validation phase.
+  * 验证阶段所有异常
   *
   * <p>This exception indicates that the user did something wrong.
   */

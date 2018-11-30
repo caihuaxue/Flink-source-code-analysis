@@ -26,6 +26,7 @@ import java.util.Map;
 
 /**
  * Discards every partial match that started before emitted match ended.
+ *丢弃在发出匹配结束之前开始的每个部分匹配
  */
 public final class SkipPastLastStrategy extends SkipRelativeToWholeMatchStrategy {
 

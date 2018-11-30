@@ -23,13 +23,14 @@ import org.apache.flink.configuration.ConfigurationUtils;
 import org.apache.flink.configuration.TaskManagerOptions;
 
 /**
+ * 利用{@link ClusterDescriptor}启动集群的描述
  * Description of the cluster to start by the {@link ClusterDescriptor}.
  */
 public final class ClusterSpecification {
 	private final int masterMemoryMB;
 	private final int taskManagerMemoryMB;
-	private final int numberTaskManagers;
-	private final int slotsPerTaskManager;
+	private final int numberTaskManagers;  // TaskManagers的数量
+	private final int slotsPerTaskManager; // 每个TaskManager的slots数量
 
 	private ClusterSpecification(int masterMemoryMB, int taskManagerMemoryMB, int numberTaskManagers, int slotsPerTaskManager) {
 		this.masterMemoryMB = masterMemoryMB;

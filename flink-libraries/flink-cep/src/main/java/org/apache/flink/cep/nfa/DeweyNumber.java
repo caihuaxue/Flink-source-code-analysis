@@ -29,6 +29,7 @@ import java.io.Serializable;
 import java.util.Arrays;
 
 /**
+ * 版本，允许在不同的版本之间恢复
  * Versioning scheme which allows to retrieve dependencies between different versions.
  *
  * <p>A dewey number consists of a sequence of digits d1.d2.d3. ... .dn. A dewey number v is compatible

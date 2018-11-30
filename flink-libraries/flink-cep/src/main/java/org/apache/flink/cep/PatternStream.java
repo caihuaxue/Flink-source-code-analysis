@@ -34,6 +34,7 @@ import org.apache.flink.util.OutputTag;
 import java.util.UUID;
 
 /**
+ * 匹配的pattern事件流，每个匹配的事件都有个names和其对应起来
  * Stream abstraction for CEP pattern detection. A pattern stream is a stream which emits detected
  * pattern sequences as a map of events associated with their names. The pattern is detected using a
  * {@link org.apache.flink.cep.nfa.NFA}. In order to process the detected sequences, the user
@@ -42,7 +43,7 @@ import java.util.UUID;
  * <p>Additionally it allows to handle partially matched event patterns which have timed out. For this
  * the user has to specify a {@link PatternTimeoutFunction} or a {@link PatternFlatTimeoutFunction}.
  *
- * @param <T> Type of the events
+ * @param <T> 事件的类型
  */
 public class PatternStream<T> {
 
@@ -85,6 +86,8 @@ public class PatternStream<T> {
 	}
 
 	/**
+	 * 把选择函数应用到检测到的pattern序列中，对于每一个pattern序列都触发{@link PatternSelectFunction}。
+	 *
 	 * Applies a select function to the detected pattern sequence. For each pattern sequence the
 	 * provided {@link PatternSelectFunction} is called. The pattern select function can produce
 	 * exactly one resulting element.

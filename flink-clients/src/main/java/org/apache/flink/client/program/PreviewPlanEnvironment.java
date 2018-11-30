@@ -28,6 +28,7 @@ import org.apache.flink.optimizer.dag.DataSinkNode;
 import java.util.List;
 
 /**
+ * 环境预优化方案的提取
  * Environment to extract the pre-optimized plan.
  */
 public final class PreviewPlanEnvironment extends ExecutionEnvironment {

@@ -30,6 +30,7 @@ import java.util.Collections;
 import java.util.List;
 
 /**
+ * JobWithJars是一个Flink数据流计划，以及一组包含执行所需的函数类和库的JAR文件。
  * A JobWithJars is a Flink dataflow plan, together with a bunch of JAR files that contain
  * the classes of the functions and libraries necessary for the execution.
  */

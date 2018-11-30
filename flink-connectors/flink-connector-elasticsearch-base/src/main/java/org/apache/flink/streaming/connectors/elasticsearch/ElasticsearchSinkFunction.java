@@ -28,7 +28,7 @@ import java.io.Serializable;
 
 /**
  * Creates multiple {@link ActionRequest ActionRequests} from an element in a stream.
- *
+ * elements发送给ES之前的处理函数
  * <p>This is used by sinks to prepare elements for sending them to Elasticsearch.
  *
  * <p>Example:

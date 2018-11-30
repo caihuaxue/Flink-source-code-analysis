@@ -24,6 +24,7 @@ import com.datastax.driver.core.ResultSet;
 import com.google.common.util.concurrent.ListenableFuture;
 
 /**
+ * 抽象接收器将类元组值写入Cassandra集群。
  * Abstract sink to write tuple-like values into a Cassandra cluster.
  *
  * @param <IN> Type of the elements emitted by this sink

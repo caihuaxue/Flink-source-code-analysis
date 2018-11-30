@@ -25,6 +25,7 @@ import java.util.Objects;
 
 /**
  * Represents a transition from one {@link State} to another.
+ * 从一个状态转移到另一个状态
  *
  * @param <T> type of events that are handled by the {@link IterativeCondition}
  */

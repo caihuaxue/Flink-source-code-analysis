@@ -38,6 +38,7 @@ import scala.concurrent.Await;
 import scala.concurrent.Future;
 
 /**
+ * 集群客户端，用于与独立的（内部）集群或独立于特定作业提出的现有集群进行通信。
  * Cluster client for communication with an standalone (on-premise) cluster or an existing cluster that has been
  * brought up independently of a specific job.
  */

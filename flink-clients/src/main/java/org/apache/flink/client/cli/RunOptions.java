@@ -22,6 +22,7 @@ import org.apache.commons.cli.CommandLine;
 
 /**
  * Command line options for the RUN command.
+ * RUN 命令的命令行选项
  */
 public class RunOptions extends ProgramOptions {
 

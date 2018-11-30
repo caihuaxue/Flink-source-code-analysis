@@ -24,6 +24,7 @@ import java.util.EnumSet;
 import java.util.Objects;
 
 /**
+ * pattern的量化器
  * A quantifier describing the Pattern. There are three main groups of {@link Quantifier}.
  *
  * <p><ol>

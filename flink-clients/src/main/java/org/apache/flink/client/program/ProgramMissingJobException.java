@@ -21,6 +21,7 @@ package org.apache.flink.client.program;
 import org.apache.flink.util.FlinkException;
 
 /**
+ * 用于指示在调用Flink程序期间没有执行作业的异常。
  * Exception used to indicate that no job was executed during the invocation of a Flink program.
  */
 public class ProgramMissingJobException extends FlinkException {

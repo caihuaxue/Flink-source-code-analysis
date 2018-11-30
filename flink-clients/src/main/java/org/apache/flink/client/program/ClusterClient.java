@@ -94,6 +94,7 @@ import scala.concurrent.duration.Duration;
 import scala.concurrent.duration.FiniteDuration;
 
 /**
+ * 封装将程序提交到远程集群所必需的功能
  * Encapsulates the functionality necessary to submit a program to a remote cluster.
  *
  * @param <T> type of the cluster id

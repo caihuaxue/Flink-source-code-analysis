@@ -35,6 +35,7 @@ import java.util.concurrent.ExecutionException;
 import java.util.concurrent.Future;
 
 /**
+ * DistributedCache提供静态方法将注册的缓存文件写入作业配置或从工作配置解码他们。它还提供本地用户对文件的访问。
  * DistributedCache provides static methods to write the registered cache files into job configuration or decode
  * them from job configuration. It also provides user access to the file locally.
  */
@@ -42,6 +43,7 @@ import java.util.concurrent.Future;
 public class DistributedCache {
 
 	/**
+	 * 关于一个条目的元信息
 	 * Meta info about an entry in {@link DistributedCache}.
 	 *
 	 * <p>Entries have different semantics for local directories depending on where we are in the job-submission process.

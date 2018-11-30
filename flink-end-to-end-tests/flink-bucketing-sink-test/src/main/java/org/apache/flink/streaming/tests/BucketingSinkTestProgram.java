@@ -43,6 +43,7 @@ import java.util.List;
 import java.util.concurrent.TimeUnit;
 
 /**
+ * 桶 sink的端到端测试
  * End-to-end test for the bucketing sink.
  *
  * <p>Contains a simple stateful job that emits into buckets per key.
@@ -70,6 +71,7 @@ public class BucketingSinkTestProgram {
 		final int idlenessMs = 10;
 
 		// define bucketing sink to emit the result
+		// 定义发射结果的bucking sink
 		BucketingSink<Tuple4<Integer, Long, Integer, String>> sink = new BucketingSink<Tuple4<Integer, Long, Integer, String>>(outputPath)
 			.setBucketer(new KeyBucketer());
 

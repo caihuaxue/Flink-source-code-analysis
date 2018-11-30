@@ -31,6 +31,7 @@ import java.net.URL;
 import java.util.List;
 
 /**
+ * 客户端执行远程执行的执行环境
  * Execution Environment for remote execution with the Client.
  */
 public class ContextEnvironment extends ExecutionEnvironment {

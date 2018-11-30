@@ -23,6 +23,7 @@ import org.apache.flink.annotation.Internal;
 import java.lang.annotation.Target;
 
 /**
+ * 指定一组配置选项的类
  * A class that specifies a group of config options. The name of the group will be used as the basis for the
  * filename of the generated html file, as defined in {@link ConfigOptionsDocGenerator}.
  *

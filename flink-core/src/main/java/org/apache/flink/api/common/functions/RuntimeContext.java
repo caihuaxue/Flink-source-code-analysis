@@ -46,10 +46,8 @@ import java.util.List;
 import java.util.Map;
 
 /**
- * A RuntimeContext contains information about the context in which functions are executed. Each parallel instance
- * of the function will have a context through which it can access static contextual information (such as
- * the current parallelism) and other constructs like accumulators and broadcast variables.
- *
+ * RuntimeContext包含关于执行函数的上下文的信息。
+ * 每个并行实例函数的上下文可以访问静态上下文信息（例如当前的并行性）和其他结构，如累加器和广播变量。
  * <p>A function can, during runtime, obtain the RuntimeContext via a call to
  * {@link AbstractRichFunction#getRuntimeContext()}.
  */
@@ -57,6 +55,7 @@ import java.util.Map;
 public interface RuntimeContext {
 
 	/**
+	 * 返回UDF在其中运行的任务的名称，如计划构建期间所指定的。
 	 * Returns the name of the task in which the UDF runs, as assigned during plan construction.
 	 *
 	 * @return The name of the task in which the UDF runs.
@@ -64,6 +63,7 @@ public interface RuntimeContext {
 	String getTaskName();
 
 	/**
+	 * 返回此并行子任务的度量组
 	 * Returns the metric group for this parallel subtask.
 	 *
 	 * @return The metric group for this parallel subtask.
@@ -72,6 +72,7 @@ public interface RuntimeContext {
 	MetricGroup getMetricGroup();
 
 	/**
+	 * 获取并行任务运行的并行性。
 	 * Gets the parallelism with which the parallel task runs.
 	 *
 	 * @return The parallelism with which the parallel task runs.
@@ -79,6 +80,7 @@ public interface RuntimeContext {
 	int getNumberOfParallelSubtasks();
 
 	/**
+	 * 获取并行任务运行的最大并行性
 	 * Gets the number of max-parallelism with which the parallel task runs.
 	 *
 	 * @return The max-parallelism with which the parallel task runs.
@@ -87,6 +89,7 @@ public interface RuntimeContext {
 	int getMaxNumberOfParallelSubtasks();
 
 	/**
+	 * 获取此并行子任务的数目。
 	 * Gets the number of this parallel subtask. The numbering starts from 0 and goes up to
 	 * parallelism-1 (parallelism as returned by {@link #getNumberOfParallelSubtasks()}).
 	 *

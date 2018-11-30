@@ -46,7 +46,7 @@ public interface PatternTimeoutFunction<IN, OUT> extends Function, Serializable 
 	/**
 	 * Generates a timeout result from the given map of events and timeout timestamp. The partial
 	 * events are identified by their names. Only one resulting element can be generated.
-	 *
+	 * 从匹配的 pattern中之选出一个结果，加了个超时时间
 	 * @param pattern Map containing the found partial pattern. Events are identified by their names
 	 * @param timeoutTimestamp Timestamp of the timeout
 	 * @return Resulting timeout element

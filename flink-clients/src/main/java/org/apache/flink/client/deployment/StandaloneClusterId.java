@@ -20,6 +20,7 @@ package org.apache.flink.client.deployment;
 
 /**
  * Identifier for standalone clusters.
+ * standalone集群模式的标识符
  */
 public class StandaloneClusterId {
 	private static final StandaloneClusterId INSTANCE = new StandaloneClusterId();

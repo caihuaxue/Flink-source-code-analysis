@@ -22,6 +22,7 @@ import org.apache.commons.cli.CommandLine;
 
 /**
  * Command line options for the INFO command.
+ * 信息命令的命令行选项
  */
 public class InfoOptions extends ProgramOptions {
 

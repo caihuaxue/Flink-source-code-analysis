@@ -46,7 +46,7 @@ public interface PatternFlatTimeoutFunction<IN, OUT> extends Function, Serializa
 	/**
 	 * Generates zero or more resulting timeout elements given a map of partial pattern events and
 	 * the timestamp of the timeout. The events are identified by their specified names.
-	 *
+	 * 只是加了一个超时时间
 	 * @param pattern Map containing the partial pattern. Events are identified by their names.
 	 * @param timeoutTimestamp Timestamp when the timeout occurred
 	 * @param out Collector used to output the generated elements

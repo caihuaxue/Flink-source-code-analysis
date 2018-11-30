@@ -42,6 +42,7 @@ import java.util.List;
 /**
  * The RemoteExecutor is a {@link org.apache.flink.api.common.PlanExecutor} that takes the program
  * and ships it to a remote Flink cluster for execution.
+ * 远程执行器，把程序传输到远程Flink集群去执行
  *
  * <p>The RemoteExecutor is pointed at the JobManager and gets the program and (if necessary) the
  * set of libraries that need to be shipped together with the program.</p>

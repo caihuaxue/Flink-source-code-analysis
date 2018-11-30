@@ -22,6 +22,7 @@ import static org.apache.flink.util.Preconditions.checkArgument;
 
 /**
  * {@link WaitStrategy} with exponentially increasing sleep time.
+ * 等待策略--指数增长的睡眠时间
  */
 public class ExponentialWaitStrategy implements WaitStrategy {
 

@@ -22,6 +22,7 @@ import org.apache.flink.annotation.PublicEvolving;
 
 /**
   * General Exception for all errors during table handling.
+  * table操作中所有错误的一般异常
   *
   * <p>This exception indicates that an internal error occurred or that a feature is not supported
   * yet. Usually, this exception does not indicate a fault of the user.

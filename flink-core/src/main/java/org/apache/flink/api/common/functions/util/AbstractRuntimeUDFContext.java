@@ -54,6 +54,7 @@ import java.util.concurrent.Future;
 import static org.apache.flink.util.Preconditions.checkNotNull;
 
 /**
+ *
  * A standalone implementation of the {@link RuntimeContext}, created by runtime UDF operators.
  */
 @Internal

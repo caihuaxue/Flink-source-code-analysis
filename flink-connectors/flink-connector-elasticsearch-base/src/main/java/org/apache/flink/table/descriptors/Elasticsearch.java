@@ -53,6 +53,7 @@ import static org.apache.flink.table.descriptors.ElasticsearchValidator.CONNECTO
 
 /**
  * Connector descriptor for the Elasticsearch search engine.
+ * ES搜索引擎的连接器描述器
  */
 public class Elasticsearch extends ConnectorDescriptor {
 
@@ -77,6 +78,7 @@ public class Elasticsearch extends ConnectorDescriptor {
 	}
 
 	/**
+	 * 添加一个连接的ES host
 	 * Adds an Elasticsearch host to connect to. Required.
 	 *
 	 * <p>Multiple hosts can be declared by calling this method multiple times.

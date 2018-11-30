@@ -24,6 +24,7 @@ import java.lang.annotation.ElementType;
 import java.lang.annotation.Target;
 
 /**
+ * 用来标注公共的但有不断发展的接口依赖的类或者方法
  * Annotation to mark classes and methods for public use, but with evolving interfaces.
  *
  * <p>Classes and methods with this annotation are intended for public use and have stable behavior.

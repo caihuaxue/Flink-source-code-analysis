@@ -22,6 +22,7 @@ import org.apache.commons.cli.CommandLine;
 
 /**
  * Command line options for the STOP command.
+ * STOP命令行的命令选项
  */
 public class StopOptions extends CommandLineOptions {
 

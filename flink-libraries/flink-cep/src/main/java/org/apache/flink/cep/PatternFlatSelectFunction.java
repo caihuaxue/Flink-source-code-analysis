@@ -45,7 +45,7 @@ public interface PatternFlatSelectFunction<IN, OUT> extends Function, Serializab
 	/**
 	 * Generates zero or more resulting elements given a map of detected pattern events. The events
 	 * are identified by their specified names.
-	 *
+	 *  从pattern匹配的事件里再选出最后的结果
 	 * @param pattern Map containing the found pattern. Events are identified by their names.
 	 * @param out Collector used to output the generated elements
 	 * @throws Exception This method may throw exceptions. Throwing an exception will cause the

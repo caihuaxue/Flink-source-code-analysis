@@ -28,6 +28,7 @@ import static org.apache.flink.util.Preconditions.checkArgument;
 
 /**
  * A configuration object for {@link RestClusterClient}s.
+ *  {@link RestClusterClient}的配置对象
  */
 public final class RestClusterClientConfiguration {
 

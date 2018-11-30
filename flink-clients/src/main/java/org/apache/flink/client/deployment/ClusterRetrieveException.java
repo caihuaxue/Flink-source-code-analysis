@@ -22,6 +22,7 @@ import org.apache.flink.util.FlinkException;
 
 /**
  * Exception which indicates that a cluster could not be retrieved.
+ * 集群不能恢复时的异常类
  */
 public class ClusterRetrieveException extends FlinkException {
 

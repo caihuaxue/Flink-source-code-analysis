@@ -20,6 +20,7 @@ package org.apache.flink.client.cli;
 
 /**
  * Special exception that is thrown when the command line parsing fails.
+ * 当命令行解析失败时的异常抛出
  */
 public class CliArgsException extends Exception {
 

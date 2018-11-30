@@ -19,6 +19,7 @@
 package org.apache.flink.client.program.rest.retry;
 
 /**
+ * 轮询结果到达的操作，需要在连续轮询之间等待时间
  * Operations that are polling for a result to arrive require a waiting time between consecutive
  * polls. A {@code WaitStrategy} determines this waiting time.
  */
@@ -27,6 +28,7 @@ public interface WaitStrategy {
 
 	/**
 	 * Returns the time to wait until the next attempt. Attempts start at {@code 0}.
+	 * 返回下一次尝试的等待时间
 	 * @param attempt The number of the last attempt.
 	 * @return Waiting time in ms.
 	 */

@@ -25,7 +25,8 @@ import static org.apache.flink.client.cli.CliFrontendParser.RUNNING_OPTION;
 import static org.apache.flink.client.cli.CliFrontendParser.SCHEDULED_OPTION;
 
 /**
- * Command line options for the LIST command.
+ * Command line options for the
+ * LIST命令的命令行选项.
  */
 public class ListOptions extends CommandLineOptions {
 

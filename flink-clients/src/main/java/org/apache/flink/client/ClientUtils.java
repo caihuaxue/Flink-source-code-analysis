@@ -24,6 +24,7 @@ import java.net.URISyntaxException;
 
 /**
  * A class that provides some utility methods.
+ * 提供一些工具防范的类
  */
 public class ClientUtils {
 	/**

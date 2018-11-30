@@ -58,6 +58,7 @@ import java.util.Map.Entry;
 import java.util.Set;
 
 /**
+ * {@link FlinkTopology}将{@link TopologyBuilder}转化成为Flink程序
  * {@link FlinkTopology} translates a {@link TopologyBuilder} to a Flink program.
  * <strong>CAUTION: {@link IRichStateSpout StateSpout}s are currently not supported.</strong>
  */

@@ -27,6 +27,7 @@ import java.util.Objects;
 
 /**
  * Represents a state of the {@link NFA}.
+ * NFA的状态
  *
  * <p>Each state is identified by a name and a state type. Furthermore, it contains a collection of
  * state transitions. The state transitions describe under which conditions it is possible to enter

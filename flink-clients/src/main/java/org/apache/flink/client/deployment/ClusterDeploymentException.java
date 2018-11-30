@@ -22,6 +22,7 @@ import org.apache.flink.util.FlinkException;
 
 /**
  * Class which indicates a problem when deploying a Flink cluster.
+ * 用来表示部署Flink集群时的异常问题
  */
 public class ClusterDeploymentException extends FlinkException {
 

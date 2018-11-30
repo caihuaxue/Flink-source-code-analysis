@@ -32,6 +32,7 @@ import java.util.NoSuchElementException;
 import java.util.Objects;
 
 /**
+ * RocksIteratorWrapper和Iterator之间的桥接器。这个Class不是线程安全的
  * Adapter class to bridge between {@link RocksIteratorWrapper} and {@link Iterator} to iterate over the keys. This class
  * is not thread safe.
  *

@@ -26,6 +26,7 @@ import java.util.Queue;
 
 /**
  * State kept for a {@link NFA}.
+ * NFA的保存状态
  */
 public class NFAState {
 

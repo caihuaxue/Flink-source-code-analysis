@@ -25,7 +25,7 @@ import java.lang.annotation.Target;
 
 /**
  * Interface to mark methods within stable, public APIs as an internal developer API.
- *
+ * 用于将稳定的公共API中的方法标记为内部开发人员API
  * <p>Developer APIs are stable but internal to Flink and might change across releases.
  */
 @Documented

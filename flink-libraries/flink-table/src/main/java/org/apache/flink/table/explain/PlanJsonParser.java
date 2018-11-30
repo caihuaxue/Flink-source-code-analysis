@@ -28,6 +28,7 @@ import java.util.LinkedHashMap;
 import java.util.List;
 
 /**
+ * 将执行计划从JSON转换为人类可读字符串的实用工具
  * Utility for converting an execution plan from JSON to a human-readable string.
  */
 public class PlanJsonParser {

@@ -21,6 +21,8 @@ package org.apache.flink.client.program;
 import org.apache.flink.util.Preconditions;
 
 /**
+ *
+ * 用于指示Flink程序的参数化有错误的异常。
  * Exception used to indicate that there is an error in the parametrization of a Flink program.
  */
 public class ProgramParametrizationException extends RuntimeException {

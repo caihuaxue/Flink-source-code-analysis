@@ -44,6 +44,7 @@ import org.apache.flink.runtime.minicluster.RpcServiceSharing;
 import java.util.List;
 
 /**
+ * 本地执行器
  * A PlanExecutor that runs Flink programs on a local embedded Flink runtime instance.
  *
  * <p>By simply calling the {@link #executePlan(org.apache.flink.api.common.Plan)} method,

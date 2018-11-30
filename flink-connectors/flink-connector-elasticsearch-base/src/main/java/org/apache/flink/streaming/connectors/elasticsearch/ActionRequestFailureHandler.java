@@ -24,6 +24,7 @@ import org.elasticsearch.action.ActionRequest;
 import java.io.Serializable;
 
 /**
+ * 失败处理
  * An implementation of {@link ActionRequestFailureHandler} is provided by the user to define how failed
  * {@link ActionRequest ActionRequests} should be handled, e.g. dropping them, reprocessing malformed documents, or
  * simply requesting them to be sent to Elasticsearch again if the failure is only temporary.
@@ -62,6 +63,7 @@ import java.io.Serializable;
 public interface ActionRequestFailureHandler extends Serializable {
 
 	/**
+	 * 处理一个失败的{@link ActionRequest}.
 	 * Handle a failed {@link ActionRequest}.
 	 *
 	 * @param action the {@link ActionRequest} that failed due to the failure

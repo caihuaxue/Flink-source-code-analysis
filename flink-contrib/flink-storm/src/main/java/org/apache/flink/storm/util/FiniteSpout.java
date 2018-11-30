@@ -20,6 +20,7 @@ package org.apache.flink.storm.util;
 import org.apache.storm.topology.IRichSpout;
 
 /**
+ * 有限喷口
  * This interface represents a spout that emits a finite number of records. Common spouts emit infinite streams by
  * default. To change this behavior and take advantage of Flink's finite-source capabilities, the spout should implement
  * this interface.

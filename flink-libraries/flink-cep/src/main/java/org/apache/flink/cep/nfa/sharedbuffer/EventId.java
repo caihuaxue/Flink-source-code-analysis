@@ -31,6 +31,7 @@ import java.util.Objects;
 
 /**
  * Composite key for events in {@link SharedBuffer}.
+ * 事件的复合key
  */
 public class EventId implements Comparable<EventId> {
 	private final int id;

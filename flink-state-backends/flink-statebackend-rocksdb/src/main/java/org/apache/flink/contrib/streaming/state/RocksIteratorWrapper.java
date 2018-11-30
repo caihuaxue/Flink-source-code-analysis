@@ -29,6 +29,7 @@ import javax.annotation.Nonnull;
 import java.io.Closeable;
 
 /**
+ * 包装RocksIterator的容器
  * This is a wrapper around {@link RocksIterator} to check the iterator status for all the methods mentioned
  * to require this check in the wiki documentation: seek, next, seekToFirst, seekToLast, seekForPrev, and prev.
  * This is required because the iterator may pass the blocks or files it had difficulties in reading (because

@@ -46,6 +46,7 @@ import java.util.LinkedHashMap;
 import java.util.concurrent.RunnableFuture;
 
 /**
+ * RocksDB 状态backend
  * Abstract base class for {@link SnapshotStrategy} implementations for RocksDB state backend.
  *
  * @param <K> type of the backend keys.

@@ -34,6 +34,7 @@ import java.util.List;
 import java.util.Map;
 
 /**
+ * 客户端在独立模式下远程执行的执行环境
  * Execution Environment for remote execution with the Client in detached mode.
  */
 public class DetachedEnvironment extends ContextEnvironment {

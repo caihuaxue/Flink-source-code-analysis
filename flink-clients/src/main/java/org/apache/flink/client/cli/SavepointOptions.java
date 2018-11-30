@@ -25,6 +25,7 @@ import static org.apache.flink.client.cli.CliFrontendParser.SAVEPOINT_DISPOSE_OP
 
 /**
  * Command line options for the SAVEPOINT command.
+ * SAVEPOINT命令的命令行选项
  */
 public class SavepointOptions extends CommandLineOptions {
 

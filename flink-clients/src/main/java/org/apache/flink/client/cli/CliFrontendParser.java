@@ -33,6 +33,7 @@ import javax.annotation.Nullable;
 import java.util.Collection;
 
 /**
+ * 一个简单的命令行解析器，基于Apache Commons CLI, 用来提取命令行选项
  * A simple command line parser (based on Apache Commons CLI) that extracts command
  * line options.
  */

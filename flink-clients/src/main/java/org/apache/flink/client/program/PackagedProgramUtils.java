@@ -36,10 +36,12 @@ import java.net.URL;
 
 /**
  * Utility class for {@link PackagedProgram} related operations.
+ * {@link PackagedProgram}相关操作的工具类
  */
 public class PackagedProgramUtils {
 
 	/**
+	 * 创建一个JobGraph
 	 * Creates a {@link JobGraph} with a specified {@link JobID}
 	 * from the given {@link PackagedProgram}.
 	 *

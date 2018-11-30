@@ -92,8 +92,9 @@ import static org.apache.flink.client.cli.CliFrontendParser.MODIFY_PARALLELISM_O
 import static org.apache.flink.client.program.ClusterClient.MAX_SLOTS_UNKNOWN;
 
 /**
- * Implementation of a simple command line frontend for executing programs.
+ * 执行一个简单的命令行前端执行程序。
  */
+
 public class CliFrontend {
 
 	private static final Logger LOG = LoggerFactory.getLogger(CliFrontend.class);

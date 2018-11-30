@@ -22,6 +22,7 @@ import org.apache.flink.annotation.PublicEvolving;
 import java.io.Serializable;
 
 /**
+ * RangeField用于将记录分割成多个范围。
  * RangeBoundaries is used to split the records into multiple ranges.
  *
  * @param <T> The boundary type.
@@ -30,6 +31,7 @@ import java.io.Serializable;
 public interface RangeBoundaries<T> extends Serializable {
 
 	/**
+	 * 获取记录的范围索引。
 	 * Get the range index of record.
 	 *
 	 * @param record     The input record.

@@ -29,6 +29,7 @@ import java.util.List;
 import java.util.PriorityQueue;
 
 /**
+ * 合并多个RocksDB迭代为一个连续的key-value group
  * Iterator that merges multiple RocksDB iterators to partition all states into contiguous key-groups.
  * The resulting iteration sequence is ordered by (key-group, kv-state).
  */
@@ -56,6 +57,11 @@ public class RocksStatesPerKeyGroupMergeIterator implements AutoCloseable {
 		}
 	}
 
+	/**
+	 * 构造函数
+	 * @param kvStateIterators
+	 * @param keyGroupPrefixByteCount
+	 */
 	public RocksStatesPerKeyGroupMergeIterator(
 		List<Tuple2<RocksIteratorWrapper, Integer>> kvStateIterators,
 		final int keyGroupPrefixByteCount) {

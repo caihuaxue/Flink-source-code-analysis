@@ -35,6 +35,7 @@ import java.util.Optional;
 import java.util.Set;
 
 /**
+ * 字段名称和类型的table schema
   * A table schema that represents a table's structure with field names and types.
   */
 @PublicEvolving

@@ -26,6 +26,7 @@ import java.lang.annotation.Target;
 /**
  * This annotations declares that a function, field, constructor, or entire type, is only visible for
  * testing purposes.
+ * 这个注解申明有些函数，属性，构造函数或整个类型值是在test时是可见的。
  *
  * <p>This annotation is typically attached when for example a method should be {@code private}
  * (because it is not intended to be called externally), but cannot be declared private, because

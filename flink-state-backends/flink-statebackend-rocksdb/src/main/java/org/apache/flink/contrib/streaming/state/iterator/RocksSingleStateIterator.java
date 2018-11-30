@@ -24,6 +24,7 @@ import org.apache.flink.util.IOUtils;
 import javax.annotation.Nonnull;
 
 /**
+ * 包装了一个RocksDB迭代器，用来缓存。给每个key/value键值对一个id值
  * Wraps a RocksDB iterator to cache it's current key and assigns an id for the key/value state to the iterator.
  * Used by {@link RocksStatesPerKeyGroupMergeIterator}.
  */

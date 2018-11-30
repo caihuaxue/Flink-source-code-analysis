@@ -38,6 +38,7 @@ import java.util.concurrent.atomic.AtomicInteger;
 import static org.apache.flink.util.Preconditions.checkNotNull;
 
 /**
+ * 基类
  * CassandraSinkBase is the common abstract class of {@link CassandraPojoSink} and {@link
  * CassandraTupleSink}.
  *

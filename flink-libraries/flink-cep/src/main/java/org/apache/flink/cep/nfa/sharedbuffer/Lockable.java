@@ -35,6 +35,7 @@ import java.util.Objects;
 /**
  * Implements locking logic for incoming event and
  * {@link SharedBufferNode} using a lock reference counter.
+ * 对incoming事件实现锁逻辑，锁引用计数
  */
 public final class Lockable<T> {
 

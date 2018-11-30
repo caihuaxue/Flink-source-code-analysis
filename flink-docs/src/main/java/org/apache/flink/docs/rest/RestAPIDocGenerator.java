@@ -74,6 +74,7 @@ import java.util.stream.Collectors;
 import static org.apache.flink.docs.util.Utils.escapeCharacters;
 
 /**
+ * Rest API 文档生成器
  * Generator for the Rest API documentation.
  *
  * <p>One HTML file is generated for each {@link RestServerEndpoint} implementation

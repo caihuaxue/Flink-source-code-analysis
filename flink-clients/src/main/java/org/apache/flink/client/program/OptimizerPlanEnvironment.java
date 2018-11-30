@@ -29,6 +29,7 @@ import java.io.ByteArrayOutputStream;
 import java.io.PrintStream;
 
 /**
+ *不执行job,只会优化计划
  * An {@link ExecutionEnvironment} that never executes a job but only creates the optimized plan.
  */
 public class OptimizerPlanEnvironment extends ExecutionEnvironment {

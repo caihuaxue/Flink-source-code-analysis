@@ -29,29 +29,34 @@ import javax.annotation.Nullable;
 
 /**
  * Custom command-line interface to load hooks for the command-line interface.
+ * 普通命令行接口，用来加载命令行接口的钩子
  */
 public interface CustomCommandLine<T> {
 
 	/**
 	 * Signals whether the custom command-line wants to execute or not.
+	 * 命令行是否要执行。如果True,表示命令行是要执行
 	 * @param commandLine The command-line options
 	 * @return True if the command-line wants to run, False otherwise
 	 */
 	boolean isActive(CommandLine commandLine);
 
 	/**
+	 * 返回命令行的独一标识
 	 * Gets the unique identifier of this CustomCommandLine.
 	 * @return A unique identifier
 	 */
 	String getId();
 
 	/**
+	 * 就自定义选项添加到已经存在的执行选项中去
 	 * Adds custom options to the existing run options.
 	 * @param baseOptions The existing options.
 	 */
 	void addRunOptions(Options baseOptions);
 
 	/**
+	 * 就自定义选项添加到已经存在的一般选项中去
 	 * Adds custom options to the existing general options.
 	 *
 	 * @param baseOptions The existing options.

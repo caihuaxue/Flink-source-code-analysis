@@ -51,6 +51,7 @@ import java.util.regex.Pattern;
 import static org.apache.flink.docs.util.Utils.escapeCharacters;
 
 /**
+ * 类用于生成配置参数的基于代码的文档。
  * Class used for generating code based documentation of configuration parameters.
  */
 public class ConfigOptionsDocGenerator {

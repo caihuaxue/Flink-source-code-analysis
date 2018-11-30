@@ -40,7 +40,7 @@ public abstract class ConnectorDescriptor extends DescriptorBase implements Desc
 	/**
 	 * Constructs a {@link ConnectorDescriptor}.
 	 *
-	 * @param type string that identifies this connector
+	 * @param type 连接器的说明
 	 * @param version property version for backwards compatibility
 	 * @param formatNeeded flag for basic validation of a needed format descriptor
 	 */

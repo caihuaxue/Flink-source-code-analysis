@@ -25,6 +25,7 @@ import org.apache.flink.util.TraversableOnceException;
 import java.util.Iterator;
 
 /**
+ * 包迭代器返回原始迭代器元素的深层副本。
  * Wraps an iterator to return deep copies of the original iterator's elements.
  *
  * @param <E> The type of the element returned by the iterator.

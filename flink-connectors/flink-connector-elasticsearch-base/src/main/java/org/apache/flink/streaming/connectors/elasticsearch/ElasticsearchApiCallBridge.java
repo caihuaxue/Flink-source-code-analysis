@@ -31,6 +31,7 @@ import java.util.Map;
 import java.util.concurrent.atomic.AtomicLong;
 
 /**
+ * 兼容不同版本
  * An {@link ElasticsearchApiCallBridge} is used to bridge incompatible Elasticsearch Java API calls across different versions.
  * This includes calls to create Elasticsearch clients, handle failed item responses, etc. Any incompatible Elasticsearch
  * Java APIs should be bridged using this interface.

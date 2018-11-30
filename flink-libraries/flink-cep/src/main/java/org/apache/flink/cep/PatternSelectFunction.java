@@ -45,7 +45,7 @@ public interface PatternSelectFunction<IN, OUT> extends Function, Serializable {
 	/**
 	 * Generates a result from the given map of events. The events are identified by their names.
 	 * Only one resulting element can be generated.
-	 *
+	 * 从匹配的pattern里选出一个结果
 	 * @param pattern Map containing the found pattern. Events are identified by their names
 	 * @return Resulting element
 	 * @throws Exception This method may throw exceptions. Throwing an exception will cause the

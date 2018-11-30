@@ -41,6 +41,7 @@ import static org.apache.flink.client.cli.CliFrontendParser.YARN_DETACHED_OPTION
 
 /**
  * Base class for command line options that refer to a JAR file program.
+ * 引用JAR文件程序的命令行选项的基类。
  */
 public abstract class ProgramOptions extends CommandLineOptions {
 

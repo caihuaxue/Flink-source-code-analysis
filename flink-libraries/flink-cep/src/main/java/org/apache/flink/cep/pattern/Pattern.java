@@ -42,7 +42,7 @@ import org.apache.flink.util.Preconditions;
  * }
  * </pre>
  *
- * @param <T> Base type of the elements appearing in the pattern
+ * @param <T> 出现在pattern中的元素的基础类型
  * @param <F> Subtype of T to which the current pattern operator is constrained
  */
 public class Pattern<T, F extends T> {

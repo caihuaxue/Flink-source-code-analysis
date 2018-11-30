@@ -31,7 +31,7 @@ import java.util.Optional;
 
 
 /**
- * Indicate the skip strategy after a match process.
+ * 在匹配过程之后指示跳过策略.
  */
 public abstract class AfterMatchSkipStrategy implements Serializable {
 
@@ -40,7 +40,7 @@ public abstract class AfterMatchSkipStrategy implements Serializable {
 	/**
 	 * Discards every partial match that started before the first event of emitted match mapped to *PatternName*.
 	 *
-	 * @param patternName the pattern name to skip to
+	 * @param patternName 要跳过的pattern name
 	 * @return the created AfterMatchSkipStrategy
 	 */
 	public static SkipToFirstStrategy skipToFirst(String patternName) {

@@ -130,6 +130,7 @@ import java.util.stream.Collectors;
 
 /**
  * A {@link ClusterClient} implementation that communicates via HTTP REST requests.
+ * 通过HTTP REST请求交互的ClusterClient实现
  */
 public class RestClusterClient<T> extends ClusterClient<T> implements NewClusterClient {
 

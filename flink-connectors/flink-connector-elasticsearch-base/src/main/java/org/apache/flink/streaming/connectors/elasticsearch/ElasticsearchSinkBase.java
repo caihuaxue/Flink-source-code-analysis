@@ -52,12 +52,14 @@ import static org.apache.flink.util.Preconditions.checkNotNull;
 
 /**
  * Base class for all Flink Elasticsearch Sinks.
+ * 所有的Flink Elasticsearch Sinks的基础类
  *
  * <p>This class implements the common behaviour across Elasticsearch versions, such as
  * the use of an internal {@link BulkProcessor} to buffer multiple {@link ActionRequest}s before
  * sending the requests to the cluster, as well as passing input records to the user provided
  * {@link ElasticsearchSinkFunction} for processing.
- *
+ * 在发送多条request到cluster之前，缓存多条ActionRequest的内部BulkProcessor。
+ * 把每一条输入记录传给ElasticsearchSinkFunction进行处理
  * <p>The version specific API calls for different Elasticsearch versions should be defined by a concrete implementation of
  * a {@link ElasticsearchApiCallBridge}, which is provided to the constructor of this class. This call bridge is used,
  * for example, to create a Elasticsearch {@link Client}, handle failed item responses, etc.
@@ -94,6 +96,7 @@ public abstract class ElasticsearchSinkBase<T, C extends AutoCloseable> extends 
 	}
 
 	/**
+	 * 为批处理提供退避策略。
 	 * Provides a backoff policy for bulk requests. Whenever a bulk request is rejected due to resource constraints
 	 * (i.e. the client's internal thread pool is full), the backoff policy decides how long the bulk processor will
 	 * wait before the operation is retried internally.
@@ -199,6 +202,13 @@ public abstract class ElasticsearchSinkBase<T, C extends AutoCloseable> extends 
 	 */
 	private final AtomicReference<Throwable> failureThrowable = new AtomicReference<>();
 
+	/**
+	 * 构造函数
+	 * @param callBridge
+	 * @param userConfig
+	 * @param elasticsearchSinkFunction
+	 * @param failureHandler
+	 */
 	public ElasticsearchSinkBase(
 		ElasticsearchApiCallBridge callBridge,
 		Map<String, String> userConfig,
@@ -281,6 +291,7 @@ public abstract class ElasticsearchSinkBase<T, C extends AutoCloseable> extends 
 	}
 
 	/**
+	 * 禁止checkpoint的刷新
 	 * Disable flushing on checkpoint. When disabled, the sink will not wait for all
 	 * pending action requests to be acknowledged by Elasticsearch on checkpoints.
 	 *

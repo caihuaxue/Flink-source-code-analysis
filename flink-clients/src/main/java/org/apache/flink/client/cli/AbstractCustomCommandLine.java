@@ -36,6 +36,7 @@ import static org.apache.flink.client.cli.CliFrontend.setJobManagerAddressInConf
 /**
  * Base class for {@link CustomCommandLine} implementations which specify a JobManager address and
  * a ZooKeeper namespace.
+ * CustomCommandLine的实现类。指定了JobManager address和ZooKeeper namespace。
  *
  */
 public abstract class AbstractCustomCommandLine<T> implements CustomCommandLine<T> {

@@ -24,12 +24,13 @@ import static org.apache.flink.client.cli.CliFrontendParser.CANCEL_WITH_SAVEPOIN
 
 /**
  * Command line options for the CANCEL command.
+ * CANCEL命令的命令行选项
  */
 public class CancelOptions extends CommandLineOptions {
 
 	private final String[] args;
 
-	/** Flag indicating whether to cancel with a savepoint. */
+	/** 取消时保存点的flag标识 */
 	private final boolean withSavepoint;
 
 	/** Optional target directory for the savepoint. Overwrites cluster default. */

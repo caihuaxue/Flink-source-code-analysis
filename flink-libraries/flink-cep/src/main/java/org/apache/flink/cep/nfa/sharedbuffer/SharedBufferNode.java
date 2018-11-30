@@ -30,6 +30,7 @@ import java.util.List;
 
 /**
  * An entry in {@link SharedBuffer} that allows to store relations between different entries.
+ * 存不同entries之间的关系
  */
 public class SharedBufferNode {
 

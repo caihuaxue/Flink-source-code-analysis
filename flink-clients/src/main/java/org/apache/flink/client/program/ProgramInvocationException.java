@@ -21,6 +21,7 @@ package org.apache.flink.client.program;
 import org.apache.flink.api.common.JobID;
 
 /**
+ * 用于指示在调用Flink程序期间有错误的异常。
  * Exception used to indicate that there is an error during the invocation of a Flink program.
  */
 public class ProgramInvocationException extends Exception {

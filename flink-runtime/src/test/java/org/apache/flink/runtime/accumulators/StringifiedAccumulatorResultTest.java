@@ -158,4 +158,9 @@ public class StringifiedAccumulatorResultTest {
 			return new NullBearingAccumulator();
 		}
 	}
+
+	@Test
+	public void testDemo(){
+		System.out.println("ddd");
+	}
 }

@@ -30,6 +30,7 @@ import java.util.concurrent.ConcurrentHashMap;
 
 
 /**
+ * 封装用户定义累加器的主累加器注册表
  * Main accumulator registry which encapsulates user-defined accumulators.
  */
 public class AccumulatorRegistry {

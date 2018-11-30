@@ -30,7 +30,7 @@ import org.apache.commons.cli.Options;
 import javax.annotation.Nullable;
 
 /**
- * The default CLI which is used for interaction with standalone clusters.
+ * 用于与独立集群交互的默认CLI
  */
 public class DefaultCLI extends AbstractCustomCommandLine<StandaloneClusterId> {
 

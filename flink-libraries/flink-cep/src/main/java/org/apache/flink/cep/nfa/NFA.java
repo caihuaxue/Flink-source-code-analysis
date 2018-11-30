@@ -59,6 +59,7 @@ import java.util.Stack;
 import static org.apache.flink.cep.nfa.MigrationUtils.deserializeComputationStates;
 
 /**
+ * 非确定性有限自动机实现
  * Non-deterministic finite automaton implementation.
  *
  * <p>The {@link AbstractKeyedCEPPatternOperator CEP operator}
