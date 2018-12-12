@@ -33,6 +33,7 @@ import java.util.UUID;
 import java.util.concurrent.LinkedBlockingQueue;
 
 /**
+ * 所提供的I/O管理器服务的外观。
  * The facade for the provided I/O manager services.
  */
 public abstract class IOManager {

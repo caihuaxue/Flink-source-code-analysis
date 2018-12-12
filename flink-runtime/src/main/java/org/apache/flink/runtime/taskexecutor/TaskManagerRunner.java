@@ -267,6 +267,7 @@ public class TaskManagerRunner implements FatalErrorHandler, AutoCloseableAsync 
 
 	// --------------------------------------------------------------------------------------------
 	//  Static entry point
+	//  standalone模式的TaskManager节点
 	// --------------------------------------------------------------------------------------------
 
 	public static void main(String[] args) throws Exception {

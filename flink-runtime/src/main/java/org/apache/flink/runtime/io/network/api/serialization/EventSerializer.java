@@ -41,6 +41,7 @@ import java.nio.ByteBuffer;
 import java.nio.ByteOrder;
 
 /**
+ * 实用程序类来序列化和反序列化任务事件
  * Utility class to serialize and deserialize task events.
  */
 public class EventSerializer {

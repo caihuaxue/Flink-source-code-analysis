@@ -22,6 +22,7 @@ import org.apache.flink.api.common.JobID;
 import org.apache.flink.runtime.taskmanager.TaskActions;
 
 /**
+ * 关于不可或缺的通知的通知接口
  * Interface for notifications about consumable partitions.
  */
 public interface ResultPartitionConsumableNotifier {

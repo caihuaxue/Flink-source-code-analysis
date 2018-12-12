@@ -53,6 +53,7 @@ import static org.apache.flink.util.Preconditions.checkArgument;
 import static org.apache.flink.util.Preconditions.checkNotNull;
 
 /**
+ * 该状态后端保存TaskManagers内存（JVM堆）中的工作状态。
  * This state backend holds the working state in the memory (JVM heap) of the TaskManagers.
  * The state backend checkpoints state as files to a file system (hence the backend's name).
  *

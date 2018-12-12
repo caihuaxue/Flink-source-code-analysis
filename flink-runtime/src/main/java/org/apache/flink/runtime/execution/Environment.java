@@ -53,6 +53,7 @@ import java.util.concurrent.Future;
 public interface Environment {
 
 	/**
+	 * 返回job的特定执行配置
 	 * Returns the job specific {@link ExecutionConfig}.
 	 *
 	 * @return The execution configuration associated with the current job.

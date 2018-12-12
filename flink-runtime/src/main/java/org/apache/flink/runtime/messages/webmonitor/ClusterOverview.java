@@ -26,6 +26,7 @@ import org.apache.flink.shaded.jackson2.com.fasterxml.jackson.annotation.JsonPro
 /**
  * Response to the {@link RequestStatusOverview} message, carrying a description
  * of the Flink cluster status.
+ * 描述Flink集群的状态描述
  */
 public class ClusterOverview extends JobsOverview {
 
@@ -36,13 +37,13 @@ public class ClusterOverview extends JobsOverview {
 	public static final String FIELD_NAME_SLOTS_AVAILABLE = "slots-available";
 
 	@JsonProperty(FIELD_NAME_TASKMANAGERS)
-	private final int numTaskManagersConnected;
+	private final int numTaskManagersConnected;  // taskmanager的数量
 
 	@JsonProperty(FIELD_NAME_SLOTS_TOTAL)
-	private final int numSlotsTotal;
+	private final int numSlotsTotal;             // slot的数量
 
 	@JsonProperty(FIELD_NAME_SLOTS_AVAILABLE)
-	private final int numSlotsAvailable;
+	private final int numSlotsAvailable;         // 可用slot的数量
 
 	@JsonCreator
 	public ClusterOverview(

@@ -27,12 +27,13 @@ import org.apache.flink.annotation.PublicEvolving;
 public enum FileSystemKind {
 
 	/**
+	 * 真正的文件系统，包含文件和目录
 	 * An actual file system, with files and directories.
 	 */
 	FILE_SYSTEM,
 
 	/**
-	 * An Object store. Files correspond to objects.
+	 * 对象存储，文件对应着目录
 	 * There are not really directories, but a directory-like structure may be mimicked
 	 * by hierarchical naming of files.
 	 */

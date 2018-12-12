@@ -26,6 +26,7 @@ import java.io.Serializable;
 import static org.apache.flink.util.Preconditions.checkNotNull;
 
 /**
+ * checkpoint的配置
  * The configuration of a checkpoint. This describes whether
  * <ul>
  *     <li>The checkpoint is s regular checkpoint or a savepoint.</li>
@@ -72,6 +73,7 @@ public class CheckpointProperties implements Serializable {
 	// ------------------------------------------------------------------------
 
 	/**
+	 * 返回检查点是否应该被强制。
 	 * Returns whether the checkpoint should be forced.
 	 *
 	 * <p>Forced checkpoints ignore the configured maximum number of concurrent
@@ -93,6 +95,7 @@ public class CheckpointProperties implements Serializable {
 	// ------------------------------------------------------------------------
 
 	/**
+	 * 返回检查点是否在被归入时被丢弃。
 	 * Returns whether the checkpoint should be discarded when it is subsumed.
 	 *
 	 * <p>A checkpoint is subsumed when the maximum number of retained

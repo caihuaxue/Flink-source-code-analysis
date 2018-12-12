@@ -23,8 +23,10 @@ import java.io.DataOutputStream;
 import java.io.IOException;
 
 /**
+ * Savepoint实例的序列化
  * Serializer for {@link Savepoint} instances.
  *
+ * 这个序列化目的：通过SavepointStore来读写savepoint.
  * <p>This serializer is used to read/write a savepoint via {@link SavepointStore}.
  *
  * <p>Version-specific serializers are accessed via the {@link SavepointSerializers} helper.
@@ -34,6 +36,7 @@ import java.io.IOException;
 public interface SavepointSerializer<T extends Savepoint> {
 
 	/**
+	 * 序列化
 	 * Serializes a savepoint to an output stream.
 	 *
 	 * @param savepoint Savepoint to serialize
@@ -43,6 +46,7 @@ public interface SavepointSerializer<T extends Savepoint> {
 	void serialize(T savepoint, DataOutputStream dos) throws IOException;
 
 	/**
+	 * 反序列化
 	 * Deserializes a savepoint from an input stream.
 	 *
 	 * @param dis Input stream to deserialize savepoint from

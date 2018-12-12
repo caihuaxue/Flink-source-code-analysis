@@ -31,6 +31,7 @@ import java.util.concurrent.ScheduledFuture;
 import java.util.concurrent.TimeUnit;
 
 /**
+ * 超时由票据标识，以便将新注册的同一密钥的超时与旧超时区分开来。
  * Service to register timeouts for a given key. The timeouts are identified by a ticket so that
  * newly registered timeouts for the same key can be distinguished from older timeouts.
  *
@@ -43,7 +44,7 @@ public class TimerService<K> {
 	/** Executor service for the scheduled timeouts. */
 	private final ScheduledExecutorService scheduledExecutorService;
 
-	/** Timeout for the shutdown of the service. */
+	/** Timeout for the shutdown of the service.服务的关闭超时时间 */
 	private final long shutdownTimeout;
 
 	/** Map of currently active timeouts. */

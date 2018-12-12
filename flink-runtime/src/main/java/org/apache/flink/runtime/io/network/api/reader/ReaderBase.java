@@ -24,7 +24,7 @@ import org.apache.flink.runtime.util.event.EventListener;
 import java.io.IOException;
 
 /**
- * The basic API for every reader.
+ * 每一个reader的基本API.
  */
 public interface ReaderBase {
 

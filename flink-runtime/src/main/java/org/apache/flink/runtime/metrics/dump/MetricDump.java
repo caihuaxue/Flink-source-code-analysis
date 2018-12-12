@@ -21,6 +21,7 @@ package org.apache.flink.runtime.metrics.dump;
 import org.apache.flink.util.Preconditions;
 
 /**
+ * 包含度量的范围、名称和值的倾倒度量的容器。
  * A container for a dumped metric that contains the scope, name and value(s) of the metric.
  */
 public abstract class MetricDump {

@@ -24,6 +24,7 @@ import org.apache.flink.runtime.jobmaster.KvStateLocationOracle;
 import javax.annotation.Nullable;
 
 /**
+ * 运行在集群环境中的每一个taskmanager之上的可查询状态客户端代理
  * An interface for the Queryable State Client Proxy running on each Task Manager in the cluster.
  *
  * <p>This proxy is where the Queryable State Client (potentially running outside your Flink

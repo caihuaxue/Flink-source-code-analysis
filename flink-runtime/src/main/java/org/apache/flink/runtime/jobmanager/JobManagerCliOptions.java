@@ -21,7 +21,7 @@ package org.apache.flink.runtime.jobmanager;
 import static org.apache.flink.util.Preconditions.checkNotNull;
 
 /**
- * The command line parameters passed to the JobManager.
+ * 传递给作业管理器的命令行参数。
  */
 public class JobManagerCliOptions {
 

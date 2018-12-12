@@ -19,6 +19,7 @@
 package org.apache.flink.metrics;
 
 /**
+ * 一个简单的计数度量，非线程安全的
  * A simple low-overhead {@link org.apache.flink.metrics.Counter} that is not thread-safe.
  */
 public class SimpleCounter implements Counter {

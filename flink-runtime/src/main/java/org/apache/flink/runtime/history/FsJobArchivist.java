@@ -45,6 +45,7 @@ import java.util.ArrayList;
 import java.util.Collection;
 
 /**
+ * 把档案文件写进FileSystem，然后取回的工具类
  * Utility class for writing an archive file to a {@link FileSystem} and reading it back.
  */
 public class FsJobArchivist {

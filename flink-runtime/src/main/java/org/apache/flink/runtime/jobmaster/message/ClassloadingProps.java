@@ -25,7 +25,7 @@ import java.net.URL;
 import java.util.Collection;
 
 /**
- * The response of classloading props request to JobManager.
+ * 类加载道具的响应请求给JobManager。
  */
 public class ClassloadingProps implements Serializable {
 

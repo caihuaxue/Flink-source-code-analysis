@@ -32,7 +32,7 @@ public class ByteStreamStateHandle implements StreamStateHandle {
 	private static final long serialVersionUID = -5280226231202517594L;
 
 	/**
-	 * The state data.
+	 * 状态数据。
 	 */
 	private final byte[] data;
 

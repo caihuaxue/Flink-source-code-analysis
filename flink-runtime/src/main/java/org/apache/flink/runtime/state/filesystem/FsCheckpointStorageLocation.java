@@ -32,6 +32,7 @@ import static org.apache.flink.util.Preconditions.checkArgument;
 import static org.apache.flink.util.Preconditions.checkNotNull;
 
 /**
+ * 文件系统上的检查点的存储位置。
  * A storage location for checkpoints on a file system.
  */
 public class FsCheckpointStorageLocation extends FsCheckpointStreamFactory implements CheckpointStorageLocation {

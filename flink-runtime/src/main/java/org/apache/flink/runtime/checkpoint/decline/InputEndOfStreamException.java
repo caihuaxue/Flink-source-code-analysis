@@ -19,6 +19,7 @@
 package org.apache.flink.runtime.checkpoint.decline;
 
 /**
+ * 表示检查点被拒绝的异常，因为其中一个输入流在对齐完成之前到达了终点。
  * Exception indicating that a checkpoint was declined because one of the input
  * stream reached its end before the alignment was complete.
  */

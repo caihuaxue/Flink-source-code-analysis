@@ -23,6 +23,7 @@ import org.apache.flink.annotation.Public;
 import java.util.Arrays;
 
 /**
+ * 可定位输入分割
  * A locatable input split is an input split referring to input data which is located on one or more hosts.
  */
 @Public

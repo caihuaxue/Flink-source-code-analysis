@@ -19,6 +19,7 @@
 package org.apache.flink.runtime.executiongraph.restart;
 
 /**
+ * 重新启动触发器的回调
  * A callback to trigger restarts, passed to the {@link RestartStrategy} to
  * trigger recovery on the ExecutionGraph. 
  */

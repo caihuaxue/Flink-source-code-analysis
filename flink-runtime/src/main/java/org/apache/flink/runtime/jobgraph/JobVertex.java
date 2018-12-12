@@ -35,7 +35,7 @@ import java.util.List;
 import static org.apache.flink.util.Preconditions.checkNotNull;
 
 /**
- * The base class for job vertexes.
+ * 作业顶点的基类.
  */
 public class JobVertex implements java.io.Serializable {
 

@@ -25,6 +25,7 @@ import org.apache.flink.core.io.IOReadableWritable;
  * should be written to.
  *
  * @param <T> the type of record which is sent through the attached output gate
+ *           通过附加输出门发送的记录类型
  */
 public interface ChannelSelector<T extends IOReadableWritable> {
 

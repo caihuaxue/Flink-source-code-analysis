@@ -32,6 +32,7 @@ import java.util.Locale;
 import static org.apache.flink.util.Preconditions.checkNotNull;
 
 /**
+ * 包裹了{@link org.apache.hadoop.fs.FileSystem}的文件系统
  * A {@link FileSystem} that wraps an {@link org.apache.hadoop.fs.FileSystem Hadoop File System}.
  */
 public class HadoopFileSystem extends FileSystem {

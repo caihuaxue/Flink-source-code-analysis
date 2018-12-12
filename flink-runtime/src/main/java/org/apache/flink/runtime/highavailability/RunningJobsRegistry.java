@@ -23,6 +23,7 @@ import org.apache.flink.api.common.JobID;
 import java.io.IOException;
 
 /**
+ * 跟踪某个作业是否正在等待执行、运行或完成的简单注册表。
  * A simple registry that tracks if a certain job is pending execution, running, or completed.
  *
  * <p>This registry is used in highly-available setups with multiple master nodes,

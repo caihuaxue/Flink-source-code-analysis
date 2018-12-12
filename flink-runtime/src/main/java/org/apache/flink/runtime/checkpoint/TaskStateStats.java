@@ -27,6 +27,7 @@ import static org.apache.flink.util.Preconditions.checkArgument;
 import static org.apache.flink.util.Preconditions.checkNotNull;
 
 /**
+ * 单个任务/操作的统计信息，该统计信息收集其子任务的所有统计信息，并提供关于所有子任务的汇总统计信息
  * Statistics for a single task/operator that gathers all statistics of its
  * subtasks and provides summary statistics about all subtasks.
  */
@@ -40,10 +41,10 @@ public class TaskStateStats implements Serializable {
 	/** Stats for each subtask */
 	private final SubtaskStateStats[] subtaskStats;
 
-	/** A summary of the subtask stats. */
+	/** 子任务统计的摘要 */
 	private final TaskStateStatsSummary summaryStats = new TaskStateStatsSummary();
 
-	/** Number of acknowledged subtasks. */
+	/** 确认的子任务数 */
 	private int numAcknowledgedSubtasks;
 
 	/** The latest acknowledged subtask stats. */

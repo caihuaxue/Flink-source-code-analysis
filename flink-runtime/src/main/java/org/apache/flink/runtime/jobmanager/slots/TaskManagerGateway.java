@@ -36,6 +36,7 @@ import org.apache.flink.runtime.rpc.RpcTimeout;
 import java.util.concurrent.CompletableFuture;
 
 /**
+ * 与任务管理器通信的任务管理器网关接口
  * Task manager gateway interface to communicate with the task manager.
  */
 public interface TaskManagerGateway {
@@ -64,6 +65,7 @@ public interface TaskManagerGateway {
 	void stopCluster(final ApplicationStatus applicationStatus, final String message);
 
 	/**
+	 * 从任务管理器请求堆栈跟踪。
 	 * Request the stack trace from the task manager.
 	 *
 	 * @param timeout for the stack trace request

@@ -66,6 +66,7 @@ import scala.concurrent.duration.FiniteDuration;
 import static org.apache.flink.util.Preconditions.checkNotNull;
 
 /**
+ * JobClient在JobManager的异步参与者消息与要触发的同步方法调用之间架起桥梁。
  * The JobClient bridges between the JobManager's asynchronous actor messages and
  * the synchronous method calls to trigger.
  */

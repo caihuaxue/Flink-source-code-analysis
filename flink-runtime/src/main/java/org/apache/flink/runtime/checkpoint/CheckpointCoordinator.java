@@ -68,6 +68,9 @@ import static org.apache.flink.util.Preconditions.checkArgument;
 import static org.apache.flink.util.Preconditions.checkNotNull;
 
 /**
+ * 检查点协调器协调操作符和状态的分布式快照。
+ * 它通过向相关任务发送消息来触发检查点，并收集检查点确认。
+ * 它还收集和维护确认检查点的任务报告的状态句柄的概述。
  * The checkpoint coordinator coordinates the distributed snapshots of operators and state.
  * It triggers the checkpoint by sending the messages to the relevant tasks and collects the
  * checkpoint acknowledgements. It also collects and maintains the overview of the state handles
@@ -77,12 +80,14 @@ public class CheckpointCoordinator {
 
 	private static final Logger LOG = LoggerFactory.getLogger(CheckpointCoordinator.class);
 
-	/** The number of recent checkpoints whose IDs are remembered */
+	/** The number of recent checkpoints whose IDs are remembered
+	 * 被记住的最近检查点的数量
+	 */
 	private static final int NUM_GHOST_CHECKPOINT_IDS = 16;
 
 	// ------------------------------------------------------------------------
 
-	/** Coordinator-wide lock to safeguard the checkpoint updates */
+	/** 维护检查点更新的协调器宽锁*/
 	private final Object lock = new Object();
 
 	/** Lock specially to make sure that trigger requests do not overtake each other.
@@ -104,7 +109,7 @@ public class CheckpointCoordinator {
 	/** Tasks who need to be sent a message when a checkpoint is started */
 	private final ExecutionVertex[] tasksToTrigger;
 
-	/** Tasks who need to acknowledge a checkpoint before it succeeds */
+	/** 在检查成功之前需要确认检查点的任务 */
 	private final ExecutionVertex[] tasksToWaitFor;
 
 	/** Tasks who need to be sent a message when a checkpoint is confirmed */
@@ -1167,6 +1172,7 @@ public class CheckpointCoordinator {
 
 	// --------------------------------------------------------------------------------------------
 	//  Periodic scheduling of checkpoints
+	// checkpoints的周期调度
 	// --------------------------------------------------------------------------------------------
 
 	public void startCheckpointScheduler() {
@@ -1175,7 +1181,7 @@ public class CheckpointCoordinator {
 				throw new IllegalArgumentException("Checkpoint coordinator is shut down");
 			}
 
-			// make sure all prior timers are cancelled
+			// 确保所有预先定时器被取消
 			stopCheckpointScheduler();
 
 			periodicScheduling = true;
@@ -1186,7 +1192,7 @@ public class CheckpointCoordinator {
 		}
 	}
 
-	public void stopCheckpointScheduler() {
+	public void  stopCheckpointScheduler() {
 		synchronized (lock) {
 			triggerRequestQueued = false;
 			periodicScheduling = false;

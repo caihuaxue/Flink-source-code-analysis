@@ -35,6 +35,7 @@ public class BufferOrEvent {
 	private final AbstractEvent event;
 
 	/**
+	 * 指示联合输入门的其他实例的可用性
 	 * Indicate availability of further instances for the union input gate.
 	 * This is not needed outside of the input gate unioning logic and cannot
 	 * be set outside of the consumer package.

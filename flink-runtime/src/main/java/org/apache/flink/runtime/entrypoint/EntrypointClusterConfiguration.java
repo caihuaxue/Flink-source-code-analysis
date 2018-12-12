@@ -28,9 +28,11 @@ import java.util.Properties;
  */
 public class EntrypointClusterConfiguration extends ClusterConfiguration {
 
+	// host
 	@Nullable
 	private final String hostname;
 
+	// rest接口端口
 	private final int restPort;
 
 	public EntrypointClusterConfiguration(@Nonnull String configDir, @Nonnull Properties dynamicProperties, @Nonnull String[] args, @Nullable String hostname, int restPort) {

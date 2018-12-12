@@ -56,6 +56,7 @@ public class ConnectionUtils {
 	private static final long MAX_SLEEP_TIME = 20000;
 
 	/**
+	 * 地址检测机制的状态。
 	 * The states of address detection mechanism.
 	 * There is only a state transition if the current state failed to determine the address.
 	 */
@@ -206,6 +207,7 @@ public class ConnectionUtils {
 	}
 
 	/**
+	 * 尝试找到允许使用给定策略连接到targetAddress的本地地址。
 	 * Try to find a local address which allows as to connect to the targetAddress using the given
 	 * strategy.
 	 *
@@ -294,6 +296,7 @@ public class ConnectionUtils {
 	}
 
 	/**
+	 * 检查两个地址是否有一样的前缀
 	 * Checks if two addresses have a common prefix (first 2 bytes).
 	 * Example: 192.168.???.???
 	 * Works also with ipv6, but accepts probably too many addresses
@@ -303,7 +306,7 @@ public class ConnectionUtils {
 	}
 
 	/**
-	 *
+	 * 尝试连接
 	 * @param fromAddress The address to connect from.
 	 * @param toSocket The socket address to connect to.
 	 * @param timeout The timeout fr the connection.

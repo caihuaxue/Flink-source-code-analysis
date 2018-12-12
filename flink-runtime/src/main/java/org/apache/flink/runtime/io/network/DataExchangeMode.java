@@ -22,7 +22,7 @@ import org.apache.flink.api.common.ExecutionMode;
 import org.apache.flink.runtime.operators.shipping.ShipStrategyType;
 
 /**
- * Defines how the data exchange between two specific operators happens.
+ * 定义两个特定运算符之间的数据交换是如何发生的。
  */
 public enum DataExchangeMode {
 

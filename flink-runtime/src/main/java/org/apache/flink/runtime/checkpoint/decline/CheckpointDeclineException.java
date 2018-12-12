@@ -19,6 +19,7 @@
 package org.apache.flink.runtime.checkpoint.decline;
 
 /**
+ * 表示拒绝检查点的所有异常的基类
  * Base class of all exceptions that indicate a declined checkpoint.
  */
 public abstract class CheckpointDeclineException extends Exception {

@@ -36,6 +36,7 @@ import java.io.IOException;
 import static org.apache.flink.util.Preconditions.checkNotNull;
 
 /**
+ * 一个可溢出的子分区在内存中启动，如果需要的话，它会溢出到磁盘。
  * A spillable sub partition starts out in-memory and spills to disk if asked
  * to do so.
  *

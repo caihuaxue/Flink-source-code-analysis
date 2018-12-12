@@ -36,6 +36,7 @@ import java.io.Serializable;
 import static org.apache.flink.util.Preconditions.checkNotNull;
 
 /**
+ * 单个输入通道实例的部署描述符。
  * Deployment descriptor for a single input channel instance.
  *
  * <p>Each input channel consumes a single subpartition. The index of the subpartition to consume

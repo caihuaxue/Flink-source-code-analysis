@@ -28,6 +28,7 @@ import java.util.Comparator;
 import java.util.List;
 
 /**
+ * 距离边界，把输入源数据分桶，按照并行度来进行性分桶
  * Build RangeBoundaries with input records. First, sort the input records, and then select
  * the boundaries with same interval.
  *

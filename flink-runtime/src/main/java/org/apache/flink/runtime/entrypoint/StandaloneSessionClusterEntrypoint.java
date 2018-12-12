@@ -28,6 +28,7 @@ import org.apache.flink.runtime.util.JvmShutdownSafeguard;
 import org.apache.flink.runtime.util.SignalHandler;
 
 /**
+ * standalone会话模式的入口，JobManager
  * Entry point for the standalone session cluster.
  */
 public class StandaloneSessionClusterEntrypoint extends SessionClusterEntrypoint {
@@ -41,16 +42,25 @@ public class StandaloneSessionClusterEntrypoint extends SessionClusterEntrypoint
 		return new SessionDispatcherResourceManagerComponentFactory(StandaloneResourceManagerFactory.INSTANCE);
 	}
 
+	/**
+	 * standalone模式的执行入口main函数，这个是JobManager。
+	 * @param args
+	 */
 	public static void main(String[] args) {
-		// startup checks and logging
+
+		// 打印出启动时的相关日志，比如代码修订，当前用户，Java版本和JVM参数等
 		EnvironmentInformation.logEnvironmentInfo(LOG, StandaloneSessionClusterEntrypoint.class.getSimpleName(), args);
+
 		SignalHandler.register(LOG);
+
 		JvmShutdownSafeguard.installAsShutdownHook(LOG);
 
+		// 集群入口配置
 		EntrypointClusterConfiguration entrypointClusterConfiguration = null;
 		final CommandLineParser<EntrypointClusterConfiguration> commandLineParser = new CommandLineParser<>(new EntrypointClusterConfigurationParserFactory());
 
 		try {
+			// 解析得到命令行参数
 			entrypointClusterConfiguration = commandLineParser.parse(args);
 		} catch (FlinkParseException e) {
 			LOG.error("Could not parse command line arguments {}.", args, e);
@@ -62,6 +72,7 @@ public class StandaloneSessionClusterEntrypoint extends SessionClusterEntrypoint
 
 		StandaloneSessionClusterEntrypoint entrypoint = new StandaloneSessionClusterEntrypoint(configuration);
 
+		// 运行集群的入口
 		ClusterEntrypoint.runClusterEntrypoint(entrypoint);
 	}
 }

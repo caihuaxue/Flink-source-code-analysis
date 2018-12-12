@@ -19,6 +19,7 @@
 package org.apache.flink.runtime.checkpoint.decline;
 
 /**
+ * 表示由于接收到取消屏障而拒绝检查点的例外。
  * Exception indicating that a checkpoint was declined because a cancellation
  * barrier was received.
  */

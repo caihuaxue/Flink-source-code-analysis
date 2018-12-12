@@ -29,6 +29,7 @@ import javax.annotation.Nullable;
 import java.util.concurrent.CompletableFuture;
 
 /**
+ * 逻辑slot表示任务管理器上可部署单个任务的资源。
  * A logical slot represents a resource on a TaskManager into
  * which a single task can be deployed.
  */

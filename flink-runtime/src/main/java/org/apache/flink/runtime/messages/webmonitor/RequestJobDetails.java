@@ -19,6 +19,8 @@
 package org.apache.flink.runtime.messages.webmonitor;
 
 /**
+ * 此消息要求对JobManager上的作业进行概述，
+ * 包括正在跑着的任务和已经完成的任务
  * This message requests an overview of the jobs on the JobManager,
  * including running jobs and/or finished jobs.
  * <p>

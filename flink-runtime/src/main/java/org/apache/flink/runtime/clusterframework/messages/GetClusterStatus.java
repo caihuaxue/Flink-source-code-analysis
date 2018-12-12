@@ -19,6 +19,8 @@
 package org.apache.flink.runtime.clusterframework.messages;
 
 /**
+ * 发送到资源管理器的消息，以请求一个{@code GetClusterStatusResponse}，
+ * 其中包含当前任务管理器的数量和任务槽的总数。
  * Message sent to the resource manager to request a {@code GetClusterStatusResponse} which contains
  * the current number of task managers and the total number of task slots.
  */

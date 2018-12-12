@@ -28,6 +28,7 @@ import java.nio.ByteOrder;
 import java.nio.ReadOnlyBufferException;
 
 /**
+ * 该类表示由FLink管理的一段内存。
  * This class represents a piece of memory managed by Flink.
  * The segment may be backed by heap memory (byte array) or by off-heap memory.
  *
@@ -36,7 +37,7 @@ import java.nio.ReadOnlyBufferException;
  * {@link org.apache.flink.core.memory.HybridMemorySegment}.
  * All methods that operate across two memory segments are implemented in this class,
  * to transparently handle the mixing of memory segment types.
- *
+ * 跨两个内存段操作的所有方法都在这个类中实现，以透明地处理内存段类型的混合。
  * <p>This class fulfills conceptually a similar purpose as Java's {@link java.nio.ByteBuffer}.
  * We add this specialized class for various reasons:
  * <ul>

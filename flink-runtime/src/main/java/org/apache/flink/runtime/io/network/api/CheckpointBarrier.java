@@ -41,6 +41,7 @@ import static org.apache.flink.util.Preconditions.checkNotNull;
  * is complete (exactly once).
  *
  * <p>The checkpoint barrier IDs are strictly monotonous increasing.
+ * 检查点障碍ID是严格单调递增的。
  */
 public class CheckpointBarrier extends RuntimeEvent {
 

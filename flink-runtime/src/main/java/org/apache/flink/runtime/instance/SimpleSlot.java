@@ -36,6 +36,7 @@ import java.util.concurrent.CompletableFuture;
 import java.util.concurrent.atomic.AtomicReferenceFieldUpdater;
 
 /**
+ * SimpleSlot表示TaskManager实例上的单个插槽，或共享插槽中的插槽
  * A SimpleSlot represents a single slot on a TaskManager instance, or a slot within a shared slot.
  *
  * <p>If this slot is part of a {@link SharedSlot}, then the parent attribute will point to that shared slot.

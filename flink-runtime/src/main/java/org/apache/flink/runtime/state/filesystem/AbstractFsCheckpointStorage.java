@@ -38,18 +38,19 @@ import static org.apache.flink.util.Preconditions.checkArgument;
 import static org.apache.flink.util.Preconditions.checkNotNull;
 
 /**
+ * 文件系统持久性检查点存储的实现。
  * An implementation of durable checkpoint storage to file systems.
  */
 public abstract class AbstractFsCheckpointStorage implements CheckpointStorage {
 
 	// ------------------------------------------------------------------------
-	//  Constants
+	//  常数
 	// ------------------------------------------------------------------------
 
-	/** The prefix of the directory containing the data exclusive to a checkpoint. */
+	/** 包含检查点专用数据的目录的前缀。*/
 	public static final String CHECKPOINT_DIR_PREFIX = "chk-";
 
-	/** The name of the directory for shared checkpoint state. */
+	/** 共享检查点状态的目录的名称。*/
 	public static final String CHECKPOINT_SHARED_STATE_DIR = "shared";
 
 	/** The name of the directory for state not owned/released by the master, but by the TaskManagers. */
@@ -68,11 +69,12 @@ public abstract class AbstractFsCheckpointStorage implements CheckpointStorage {
 	/** The jobId, written into the generated savepoint directories. */
 	private final JobID jobId;
 
-	/** The default location for savepoints. Null, if none is configured. */
+	/** 默认的存储路径 The default location for savepoints. Null, if none is configured. */
 	@Nullable
 	private final Path defaultSavepointDirectory;
 
 	/**
+	 * 构造函数：创建一个新的检查点存储
 	 * Creates a new checkpoint storage.
 	 *
 	 * @param jobId The ID of the job that writes the checkpoints.
@@ -110,6 +112,7 @@ public abstract class AbstractFsCheckpointStorage implements CheckpointStorage {
 	}
 
 	/**
+	 * 为保存点创建基于文件系统的存储位置。
 	 * Creates a file system based storage location for a savepoint.
 	 *
 	 * <p>This methods implements the logic that decides which location to use (given optional

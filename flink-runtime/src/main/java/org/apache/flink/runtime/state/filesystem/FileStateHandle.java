@@ -40,7 +40,7 @@ public class FileStateHandle implements StreamStateHandle {
 	/** The path to the file in the filesystem, fully describing the file system */
 	private final Path filePath;
 
-	/** The size of the state in the file */
+	/** 文件中的状态大小 The size of the state in the file */
 	private final long stateSize;
 
 	/**

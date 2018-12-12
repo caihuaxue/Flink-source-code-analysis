@@ -109,7 +109,7 @@ class AllocatedSlot implements SlotContext {
 	}
 
 	/**
-	 * Gets the resource profile of the slot.
+	 * 获取槽的资源配置文件。.
 	 *
 	 * @return The resource profile of the slot.
 	 */

@@ -19,6 +19,7 @@
 package org.apache.flink.metrics;
 
 /**
+ * 字符过滤
  * Interface for a character filter function. The filter function is given a string which the filter
  * can transform. The returned string is the transformation result.
  */

@@ -34,6 +34,7 @@ public final class HadoopDataInputStream extends FSDataInputStream {
 
 	/**
 	 * Minimum amount of bytes to skip forward before we issue a seek instead of discarding read.
+	 * 在发出查找之前要向前跳过的最小字节数，而不是丢弃读取。
 	 *
 	 * <p>The current value is just a magic number. In the long run, this value could become configurable, but for now it
 	 * is a conservative, relatively small value that should bring safe improvements for small skips (e.g. in reading

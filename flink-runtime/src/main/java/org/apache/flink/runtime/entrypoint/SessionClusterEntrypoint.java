@@ -32,6 +32,7 @@ import java.io.File;
 import java.io.IOException;
 
 /**
+ * 会话集群入口点的基类
  * Base class for session cluster entry points.
  */
 public abstract class SessionClusterEntrypoint extends ClusterEntrypoint {

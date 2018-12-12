@@ -29,7 +29,7 @@ import org.apache.flink.runtime.io.network.partition.consumer.InputGate;
 import java.io.IOException;
 
 /**
- * A record-oriented reader.
+ * 面向记录的读者
  *
  * <p>This abstract base class is used by both the mutable and immutable record readers.
  *

@@ -90,6 +90,10 @@ import java.util.function.Function;
 import java.util.stream.Collectors;
 
 /**
+ * 收发器组件的基类
+ * Dispatcher组件负责接收作业提交，持久化它们，生成JobManager来执行作业，并在主故障时恢复它们。
+ * 此外，它知道FLink会话群集的状态。
+ *
  * Base class for the Dispatcher component. The Dispatcher component is responsible
  * for receiving job submissions, persisting them, spawning JobManagers to execute
  * the jobs and to recover them in case of a master failure. Furthermore, it knows
@@ -103,6 +107,7 @@ public abstract class Dispatcher extends FencedRpcEndpoint<DispatcherId> impleme
 	private final Configuration configuration;
 
 	private final SubmittedJobGraphStore submittedJobGraphStore;
+
 	private final RunningJobsRegistry runningJobsRegistry;
 
 	private final HighAvailabilityServices highAvailabilityServices;

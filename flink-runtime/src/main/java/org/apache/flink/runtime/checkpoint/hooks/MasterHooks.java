@@ -43,6 +43,7 @@ import java.util.concurrent.Executor;
 import java.util.concurrent.TimeoutException;
 
 /**
+ * 收集处理检查点主钩子的方法。
  * Collection of methods to deal with checkpoint master hooks.
  */
 public class MasterHooks {

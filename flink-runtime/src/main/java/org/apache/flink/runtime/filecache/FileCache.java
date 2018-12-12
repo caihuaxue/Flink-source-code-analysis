@@ -51,6 +51,7 @@ import java.util.concurrent.TimeUnit;
 import static org.apache.flink.util.Preconditions.checkNotNull;
 
 /**
+ * 当部署任务时，FileCache用于访问已注册的缓存文件。
  * The FileCache is used to access registered cache files when a task is deployed.
  *
  * <p>Files and zipped directories are retrieved from the {@link PermanentBlobService}. The life-cycle of these files
@@ -63,7 +64,7 @@ public class FileCache {
 
 	private static final Logger LOG = LoggerFactory.getLogger(FileCache.class);
 
-	/** cache-wide lock to ensure consistency. copies are not done under this lock. */
+	/** cache-wide lock to ensure consistency.o copies are not done under this lck. */
 	private final Object lock = new Object();
 
 	private final Map<JobID, Map<String, Future<Path>>> entries;

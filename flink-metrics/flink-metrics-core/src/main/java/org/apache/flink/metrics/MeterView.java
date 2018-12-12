@@ -19,6 +19,7 @@
 package org.apache.flink.metrics;
 
 /**
+ * MeterView提供每秒在给定时间周期内的平均事件速率。
  * A MeterView provides an average rate of events per second over a given time period.
  *
  * <p>The primary advantage of this class is that the rate is neither updated by the computing thread nor for every event.

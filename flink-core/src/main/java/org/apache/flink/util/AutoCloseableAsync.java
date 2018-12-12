@@ -22,6 +22,7 @@ import java.util.concurrent.CompletableFuture;
 import java.util.concurrent.ExecutionException;
 
 /**
+ * 非阻塞的方式关掉资源
  * Closeable interface which allows to close a resource in a non
  * blocking fashion.
  */

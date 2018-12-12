@@ -25,6 +25,7 @@ import java.util.concurrent.LinkedBlockingQueue;
 import java.util.concurrent.TimeUnit;
 
 /**
+ * 从文件通道读取块中的数据的读取器。
  * A reader that reads data in blocks from a file channel. The reader reads the blocks into a 
  * {@link org.apache.flink.core.memory.MemorySegment} in an asynchronous fashion. That is, a read
  * request is not processed by the thread that issues it, but by an asynchronous reader thread. Once the read request

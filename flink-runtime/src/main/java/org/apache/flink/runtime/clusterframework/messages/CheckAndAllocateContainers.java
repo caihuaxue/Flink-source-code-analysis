@@ -19,6 +19,7 @@
 package org.apache.flink.runtime.clusterframework.messages;
 
 /**
+ * 此消息通知资源主控器检查需要多少TaskManager、有多少可用TaskManager，并在需要时触发调整。
  * This message signals the resource master to check how many TaskManagers are 
  * desired, how many are available, and to trigger adjustments if needed.
  */

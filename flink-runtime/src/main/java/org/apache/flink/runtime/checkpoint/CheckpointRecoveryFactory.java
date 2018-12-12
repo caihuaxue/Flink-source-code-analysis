@@ -21,6 +21,7 @@ package org.apache.flink.runtime.checkpoint;
 import org.apache.flink.api.common.JobID;
 
 /**
+ * 每个作业检查点恢复组件的工厂
  * A factory for per Job checkpoint recovery components.
  */
 public interface CheckpointRecoveryFactory {

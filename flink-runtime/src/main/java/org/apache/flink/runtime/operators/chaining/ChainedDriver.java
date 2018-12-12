@@ -45,10 +45,13 @@ public abstract class ChainedDriver<IT, OT> implements Collector<IT> {
 
 	protected String taskName;
 
+	// 输出集合
 	protected Collector<OT> outputCollector;
-	
+
+	// 类加载器
 	protected ClassLoader userCodeClassLoader;
-	
+
+	//
 	private DistributedRuntimeUDFContext udfContext;
 
 	protected ExecutionConfig executionConfig;

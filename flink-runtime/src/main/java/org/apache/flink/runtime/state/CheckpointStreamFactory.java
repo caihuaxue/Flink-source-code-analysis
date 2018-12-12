@@ -26,6 +26,7 @@ import java.io.IOException;
 import java.io.OutputStream;
 
 /**
+ * 检查点输出流工厂，用来持久化检查点的数据
  * A factory for checkpoint output streams, which are used to persist data for checkpoints.
  *
  * <p>Stream factories can be created from the {@link CheckpointStorage} through
@@ -38,7 +39,7 @@ public interface CheckpointStreamFactory {
 	 * is closed, it returns a state handle that can retrieve the state back.
 	 *
 	 * @param scope The state's scope, whether it is exclusive or shared.
-	 * @return An output stream that writes state for the given checkpoint.
+	 * @return 为给定检查点编写状态的输出流。An output stream that writes state for the given checkpoint.
 	 *
 	 * @throws IOException Exceptions may occur while creating the stream and should be forwarded.
 	 */

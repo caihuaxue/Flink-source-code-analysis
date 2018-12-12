@@ -35,6 +35,7 @@ import static org.apache.flink.util.Preconditions.checkArgument;
 import static org.apache.flink.util.Preconditions.checkNotNull;
 
 /**
+ * 文件系统持久性检查点存储的实现。
  * An implementation of durable checkpoint storage to file systems.
  */
 public class FsCheckpointStorage extends AbstractFsCheckpointStorage {

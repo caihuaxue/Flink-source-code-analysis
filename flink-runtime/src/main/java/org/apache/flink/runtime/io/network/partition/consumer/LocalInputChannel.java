@@ -41,7 +41,7 @@ import static org.apache.flink.util.Preconditions.checkNotNull;
 import static org.apache.flink.util.Preconditions.checkState;
 
 /**
- * An input channel, which requests a local subpartition.
+ * 一个输入通道，它请求一个本地子分区。
  */
 public class LocalInputChannel extends InputChannel implements BufferAvailabilityListener {
 
@@ -51,7 +51,7 @@ public class LocalInputChannel extends InputChannel implements BufferAvailabilit
 
 	private final Object requestLock = new Object();
 
-	/** The local partition manager. */
+	/** 本地分区管理 */
 	private final ResultPartitionManager partitionManager;
 
 	/** Task event dispatcher for backwards events. */

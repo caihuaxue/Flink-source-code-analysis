@@ -25,6 +25,7 @@ package org.apache.flink.runtime.io.network.partition.consumer;
 public interface InputGateListener {
 
 	/**
+	 * 如果输入门将数据从零移动到非零可用输入通道，则通知回调。
 	 * Notification callback if the input gate moves from zero to non-zero
 	 * available input channels with data.
 	 *

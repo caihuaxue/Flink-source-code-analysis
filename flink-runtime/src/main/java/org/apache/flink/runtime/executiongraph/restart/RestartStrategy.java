@@ -22,6 +22,7 @@ import org.apache.flink.runtime.concurrent.ScheduledExecutor;
 import org.apache.flink.runtime.executiongraph.ExecutionGraph;
 
 /**
+ * 执行图的重启策略
  * Strategy for {@link ExecutionGraph} restarts.
  */
 public interface RestartStrategy {

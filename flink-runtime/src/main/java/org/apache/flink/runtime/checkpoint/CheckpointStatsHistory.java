@@ -31,6 +31,7 @@ import static org.apache.flink.util.Preconditions.checkArgument;
 import static org.apache.flink.util.Preconditions.checkNotNull;
 
 /**
+ * 基于数组的检查点统计数据的历史。job的checkpoint可以保存最新的一系列（如20条）
  * An array based history of checkpoint stats.
  *
  * <p>The size of the array is constrained by the maximum allowed size. The
@@ -45,7 +46,7 @@ import static org.apache.flink.util.Preconditions.checkNotNull;
  * <p>Furthermore the history tracks the latest completed and latest failed
  * checkpoint as well as the latest savepoint.
  */
-public class CheckpointStatsHistory implements Serializable {
+public class  CheckpointStatsHistory implements Serializable {
 
 	private static final long serialVersionUID = 7090320677606528415L;
 

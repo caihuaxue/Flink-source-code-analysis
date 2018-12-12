@@ -57,12 +57,12 @@ public class SignalHandler {
 	}
 
 	/**
-	 * Register some signal handlers.
+	 * 注册一些信号处理程序。
 	 *
 	 * @param LOG The slf4j logger
 	 */
 	public static void register(final Logger LOG) {
-		synchronized (SignalHandler.class) {
+		synchronized (SignalHandler.class) {  // 类锁
 			if (registered) {
 				return;
 			}

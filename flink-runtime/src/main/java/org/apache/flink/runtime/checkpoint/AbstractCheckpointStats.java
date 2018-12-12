@@ -30,6 +30,7 @@ import static org.apache.flink.util.Preconditions.checkNotNull;
 
 /**
  * Base class for checkpoint statistics.
+ * 检查点统计的基类
  */
 public abstract class AbstractCheckpointStats implements Serializable {
 

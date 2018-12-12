@@ -25,6 +25,7 @@ import java.io.File;
 import java.io.IOException;
 
 /**
+ * 恢复永久二进制大对象的服务
  * A service to retrieve permanent binary large objects (BLOBs).
  *
  * <p>These may include per-job BLOBs that are covered by high-availability (HA) mode, e.g. a job's

@@ -68,6 +68,7 @@ public interface HighAvailabilityServices extends AutoCloseable {
 	// ------------------------------------------------------------------------
 
 	/**
+	 * 获取群集的资源管理器的恢复leader。
 	 * Gets the leader retriever for the cluster's resource manager.
 	 */
 	LeaderRetrievalService getResourceManagerLeaderRetriever();

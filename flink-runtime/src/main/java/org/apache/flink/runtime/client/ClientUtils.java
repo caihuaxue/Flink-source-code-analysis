@@ -36,6 +36,7 @@ import java.util.stream.Collectors;
 
 /**
  * Contains utility methods for clients.
+ * 包含clients的工具方法
  */
 public enum ClientUtils {
 	;

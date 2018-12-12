@@ -50,6 +50,7 @@ import java.util.concurrent.ConcurrentMap;
 import java.util.concurrent.atomic.AtomicReference;
 
 /**
+ * 通道处理程序，用于从生产者读取缓冲区响应或错误响应的消息，为生产者写入并刷新未通知的信用。
  * Channel handler to read the messages of buffer response or error response from the
  * producer, to write and flush the unannounced credits for the producer.
  *

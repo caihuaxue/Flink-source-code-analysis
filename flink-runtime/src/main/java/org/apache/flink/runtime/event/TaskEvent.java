@@ -19,6 +19,7 @@
 package org.apache.flink.runtime.event;
 
 /**
+ * 此事件的子类被识别为不属于核心flink运行时的自定义事件。
  * Subclasses of this event are recognized as custom events that are not part of the core
  * flink runtime.
  */

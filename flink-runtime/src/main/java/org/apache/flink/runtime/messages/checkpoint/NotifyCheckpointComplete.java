@@ -22,6 +22,7 @@ import org.apache.flink.api.common.JobID;
 import org.apache.flink.runtime.executiongraph.ExecutionAttemptID;
 
 /**
+ * 告诉任务检查点已被确认，并且该任务可以将检查点提交给外部世界。
  * This message is sent from the {@link org.apache.flink.runtime.jobmanager.JobManager} to the
  * {@link org.apache.flink.runtime.taskmanager.TaskManager} to tell a task that the checkpoint
  * has been confirmed and that the task can commit the checkpoint to the outside world.

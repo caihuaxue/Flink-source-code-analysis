@@ -26,6 +26,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 /**
+ * 在创建Hadoop模板之前，检查Hadoop的所有依赖是否可用。
  * A {@link SecurityModuleFactory} for {@link HadoopModule}. This checks if Hadoop dependencies
  * are available before creating a {@link HadoopModule}.
  */
@@ -35,7 +36,7 @@ public class HadoopModuleFactory implements SecurityModuleFactory {
 
 	@Override
 	public SecurityModule createModule(SecurityConfiguration securityConfig) {
-		// First check if we have Hadoop in the ClassPath. If not, we simply don't do anything.
+		// 首先检查在ClassPath中是否有Hadoop,如果没有，我们不用做任何事情.
 		try {
 			Class.forName(
 				"org.apache.hadoop.conf.Configuration",

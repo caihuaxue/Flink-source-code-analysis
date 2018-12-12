@@ -33,6 +33,13 @@ import java.io.IOException;
 import java.net.URI;
 
 /**
+ * 将所有元数据（和数据）存储在文件中的所有状态后端的基类。
+ * 它的实现包括：
+ * {@link FsStateBackend}
+ * {@link org.apache.flink.runtime.state.memory.MemoryStateBackend}
+ * {@code RocksDBStateBackend}.
+ *
+ *
  * A base class for all state backends that store their metadata (and data) in files.
  * Examples that inherit from this are the {@link FsStateBackend}, the
  * {@link org.apache.flink.runtime.state.memory.MemoryStateBackend MemoryStateBackend}, or the
@@ -71,7 +78,7 @@ public abstract class AbstractFileStateBackend extends AbstractStateBackend {
 	private static final long serialVersionUID = 1L;
 
 	// ------------------------------------------------------------------------
-	//  State Backend Properties
+	//  State Backend Properties 状态后端属性
 	// ------------------------------------------------------------------------
 
 	/** The path where checkpoints will be stored, or null, if none has been configured. */

@@ -25,8 +25,10 @@ import org.apache.flink.runtime.state.CompletedCheckpointStorageLocation;
 import java.io.IOException;
 
 /**
+ * 驻留在文件系统上。
  * A {@link CompletedCheckpointStorageLocation} that resides on a file system.
- * This locattion is internally represented through the checkpoint directory plus the metadata file.
+ * 此位置通过检查点目录加元数据文件内部表示。
+ * This location is internally represented through the checkpoint directory plus the metadata file.
  */
 public class FsCompletedCheckpointStorageLocation implements CompletedCheckpointStorageLocation {
 

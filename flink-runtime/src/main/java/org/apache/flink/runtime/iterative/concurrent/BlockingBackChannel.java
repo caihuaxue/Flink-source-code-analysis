@@ -27,6 +27,7 @@ import java.util.concurrent.ArrayBlockingQueue;
 import java.util.concurrent.BlockingQueue;
 
 /**
+ * 同时发生的
  * A concurrent datastructure that establishes a backchannel buffer between an iteration head
  * and an iteration tail.
  */
@@ -35,6 +36,7 @@ public class BlockingBackChannel {
 	/** Buffer to send back the superstep results. */
 	private final SerializedUpdateBuffer buffer;
 
+	// 用于阻止缓冲区切换的单元素队列。
 	/** A one element queue used for blocking hand over of the buffer. */
 	private final BlockingQueue<SerializedUpdateBuffer> queue;
 

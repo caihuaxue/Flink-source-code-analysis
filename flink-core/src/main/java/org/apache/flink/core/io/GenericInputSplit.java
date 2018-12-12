@@ -21,6 +21,7 @@ package org.apache.flink.core.io;
 import org.apache.flink.annotation.Public;
 
 /**
+ * 只有一个分区号的通用输入分割。
  * A generic input split that has only a partition number.
  */
 @Public

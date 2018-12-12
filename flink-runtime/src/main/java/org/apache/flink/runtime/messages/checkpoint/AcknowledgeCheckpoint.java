@@ -25,10 +25,11 @@ import org.apache.flink.runtime.checkpoint.TaskStateSnapshot;
 import org.apache.flink.runtime.executiongraph.ExecutionAttemptID;
 
 /**
+ * TaskManager发送信息给JobManager,说独立任务的checkpoint已经完成了。
  * This message is sent from the {@link org.apache.flink.runtime.taskmanager.TaskManager} to the
  * {@link org.apache.flink.runtime.jobmanager.JobManager} to signal that the checkpoint of an
  * individual task is completed.
- * <p>
+ * <p> 此消息可携带任务链式运算符状态和密钥组状态的句柄。
  * <p>This message may carry the handle to the task's chained operator state and the key group
  * state.
  */
@@ -61,7 +62,7 @@ public class AcknowledgeCheckpoint extends AbstractCheckpointMessage implements 
 	}
 
 	// ------------------------------------------------------------------------
-	//  properties
+	//  属性
 	// ------------------------------------------------------------------------
 
 	public TaskStateSnapshot getSubtaskState() {

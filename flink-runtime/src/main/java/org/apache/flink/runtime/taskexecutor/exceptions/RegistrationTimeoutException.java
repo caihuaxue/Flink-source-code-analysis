@@ -21,6 +21,7 @@ package org.apache.flink.runtime.taskexecutor.exceptions;
 import org.apache.flink.runtime.taskexecutor.TaskExecutor;
 
 /**
+ * taskExecutor不能注册异常
  * Exception which indicates that the {@link TaskExecutor} could not register at
  * the master in time.
  */

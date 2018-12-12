@@ -85,19 +85,22 @@ import java.util.concurrent.TimeoutException;
 import java.util.concurrent.atomic.AtomicBoolean;
 
 /**
- * Base class for the Flink cluster entry points.
- *
- * <p>Specialization of this class can be used for the session mode and the per-job mode
+ *  Flink集群入口点的基类
+ *  该类用于会话模式和每个作业模式。
+ *  <p>Specialization of this class can be used for the session mode and the per-job mode
  */
 public abstract class ClusterEntrypoint implements AutoCloseableAsync, FatalErrorHandler {
 
+	// 内部集群运行模式
 	public static final ConfigOption<String> EXECUTION_MODE = ConfigOptions
 		.key("internal.cluster.execution-mode")
 		.defaultValue(ExecutionMode.NORMAL.toString());
 
 	protected static final Logger LOG = LoggerFactory.getLogger(ClusterEntrypoint.class);
 
+	// 启动时失败的状态码
 	protected static final int STARTUP_FAILURE_RETURN_CODE = 1;
+	// 运行时失败的状态码
 	protected static final int RUNTIME_FAILURE_RETURN_CODE = 2;
 
 	private static final Time INITIALIZATION_SHUTDOWN_TIMEOUT = Time.seconds(30L);
@@ -111,6 +114,7 @@ public abstract class ClusterEntrypoint implements AutoCloseableAsync, FatalErro
 
 	private final AtomicBoolean isShutDown = new AtomicBoolean(false);
 
+	// 分发器资源管理组件
 	@GuardedBy("lock")
 	private DispatcherResourceManagerComponent<?> clusterComponent;
 
@@ -140,10 +144,16 @@ public abstract class ClusterEntrypoint implements AutoCloseableAsync, FatalErro
 
 	private final Thread shutDownHook;
 
+	/**
+	 * 构造函数
+	 * @param configuration
+	 */
 	protected ClusterEntrypoint(Configuration configuration) {
+
 		this.configuration = generateClusterConfiguration(configuration);
 		this.terminationFuture = new CompletableFuture<>();
 
+		// 添加关闭时的钩子函数
 		shutDownHook = ShutdownHookUtil.addShutdownHook(this::cleanupDirectories, getClass().getSimpleName(), LOG);
 	}
 
@@ -151,15 +161,22 @@ public abstract class ClusterEntrypoint implements AutoCloseableAsync, FatalErro
 		return terminationFuture;
 	}
 
+	/**
+	 * 启动集群
+	 * @throws ClusterEntrypointException
+	 */
 	public void startCluster() throws ClusterEntrypointException {
 		LOG.info("Starting {}.", getClass().getSimpleName());
 
 		try {
+			// 配置文件系统
 			configureFileSystems(configuration);
 
+			// 安全上下文
 			SecurityContext securityContext = installSecurityContext(configuration);
 
 			securityContext.runSecured((Callable<Void>) () -> {
+				// 启动集群
 				runCluster(configuration);
 
 				return null;
@@ -183,10 +200,16 @@ public abstract class ClusterEntrypoint implements AutoCloseableAsync, FatalErro
 		}
 	}
 
+	/**
+	 * 配置文件系统
+	 * @param configuration
+	 * @throws Exception
+	 */
 	private void configureFileSystems(Configuration configuration) throws Exception {
 		LOG.info("Install default filesystem.");
 
 		try {
+			// 文件系统初始化
 			FileSystem.initialize(configuration);
 		} catch (IOException e) {
 			throw new IOException("Error while setting the default " +
@@ -194,6 +217,12 @@ public abstract class ClusterEntrypoint implements AutoCloseableAsync, FatalErro
 		}
 	}
 
+	/**
+	 * 安装安全上下文
+	 * @param configuration
+	 * @return
+	 * @throws Exception
+	 */
 	protected SecurityContext installSecurityContext(Configuration configuration) throws Exception {
 		LOG.info("Install security context.");
 
@@ -202,6 +231,11 @@ public abstract class ClusterEntrypoint implements AutoCloseableAsync, FatalErro
 		return SecurityUtils.getInstalledContext();
 	}
 
+	/**
+	 * 运行集群
+	 * @param configuration
+	 * @throws Exception
+	 */
 	private void runCluster(Configuration configuration) throws Exception {
 		synchronized (lock) {
 			initializeServices(configuration);
@@ -393,7 +427,7 @@ public abstract class ClusterEntrypoint implements AutoCloseableAsync, FatalErro
 	}
 
 	// --------------------------------------------------
-	// Internal methods
+	// 内部方法
 	// --------------------------------------------------
 
 	private Configuration generateClusterConfiguration(Configuration configuration) {
@@ -459,20 +493,22 @@ public abstract class ClusterEntrypoint implements AutoCloseableAsync, FatalErro
 	}
 
 	/**
+	 * 清空集群入口点启动时的临时目录
 	 * Clean up of temporary directories created by the {@link ClusterEntrypoint}.
 	 *
 	 * @throws IOException if the temporary directories could not be cleaned up
 	 */
-	private void cleanupDirectories() throws IOException {
+	private void  cleanupDirectories() throws IOException {
 		ShutdownHookUtil.removeShutdownHook(shutDownHook, getClass().getSimpleName(), LOG);
 
 		final String webTmpDir = configuration.getString(WebOptions.TMP_DIR);
 
+		// 删除临时目录
 		FileUtils.deleteDirectory(new File(webTmpDir));
 	}
 
 	// --------------------------------------------------
-	// Abstract methods
+	// 抽象方法
 	// --------------------------------------------------
 
 	protected abstract DispatcherResourceManagerComponentFactory<?> createDispatcherResourceManagerComponentFactory(Configuration configuration);
@@ -507,13 +543,15 @@ public abstract class ClusterEntrypoint implements AutoCloseableAsync, FatalErro
 	}
 
 	// --------------------------------------------------
-	// Helper methods
+	// Helper methods 运行集群入口
 	// --------------------------------------------------
 
 	public static void runClusterEntrypoint(ClusterEntrypoint clusterEntrypoint) {
 
+		//入口类的名字
 		final String clusterEntrypointName = clusterEntrypoint.getClass().getSimpleName();
 		try {
+			// 启动集群
 			clusterEntrypoint.startCluster();
 		} catch (ClusterEntrypointException e) {
 			LOG.error(String.format("Could not start cluster entrypoint %s.", clusterEntrypointName), e);
@@ -535,17 +573,29 @@ public abstract class ClusterEntrypoint implements AutoCloseableAsync, FatalErro
 	}
 
 	/**
+	 * {@link MiniDispatcher}的执行模式
 	 * Execution mode of the {@link MiniDispatcher}.
 	 */
 	public enum ExecutionMode {
 		/**
-		 * Waits until the job result has been served.
+		 * 等待工作结果送达。
 		 */
-		NORMAL,
+		 NORMAL,
 
 		/**
+		 * 任务完成时直接停止
 		 * Directly stops after the job has finished.
 		 */
 		DETACHED
+	}
+
+	/**
+	 * 测试的main函数
+	 * @param args
+	 */
+	public static void main(String[] args){
+		System.out.println("444");
+		Time.seconds(10);
+		System.out.println("ffff");
 	}
 }

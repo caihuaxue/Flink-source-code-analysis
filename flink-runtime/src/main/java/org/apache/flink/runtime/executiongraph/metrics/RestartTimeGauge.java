@@ -25,6 +25,7 @@ import org.apache.flink.runtime.jobgraph.JobStatus;
 import static org.apache.flink.util.Preconditions.checkNotNull;
 
 /**
+ * 返回最后重新启动时间的仪表。
  * Gauge which returns the last restarting time.
  * 
  * <p>Restarting time is the time between {@link JobStatus#RESTARTING} and {@link JobStatus#RUNNING},

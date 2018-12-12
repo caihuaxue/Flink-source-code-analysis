@@ -25,6 +25,7 @@ import org.apache.flink.configuration.IllegalConfigurationException;
 import org.apache.flink.runtime.state.StateBackendFactory;
 
 /**
+ * 创建{@link FsStateBackend}的工厂
  * A factory that creates an {@link FsStateBackend} from a configuration.
  */
 @PublicEvolving

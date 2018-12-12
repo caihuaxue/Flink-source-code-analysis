@@ -71,7 +71,7 @@ import java.util.Set;
  * +------------------------------------------------+
  * }</pre>
  * 
- * <p>The slot hierarchy in the slot sharing group will look like the following</p> 
+ * <p>插槽共享组中的插槽层次结构将如下所示</p>
  * 
  * <pre>
  *     Shared(0)(root)

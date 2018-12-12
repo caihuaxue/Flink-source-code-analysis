@@ -54,10 +54,20 @@ class NettyClient {
 	@Nullable
 	private SSLHandlerFactory clientSSLFactory;
 
+	/**
+	 * 构造函数
+	 * @param config
+	 */
 	NettyClient(NettyConfig config) {
 		this.config = config;
 	}
 
+	/**
+	 * 初始化函数
+	 * @param protocol
+	 * @param nettyBufferPool
+	 * @throws IOException
+	 */
 	void init(final NettyProtocol protocol, NettyBufferPool nettyBufferPool) throws IOException {
 		checkState(bootstrap == null, "Netty client has already been initialized.");
 

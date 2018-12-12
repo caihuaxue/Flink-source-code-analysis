@@ -35,6 +35,7 @@ import static org.apache.flink.util.Preconditions.checkNotNull;
 import static org.apache.flink.util.Preconditions.checkState;
 
 /**
+ * 一个只存储在内存中的子分区，可以一次性使用。
  * A pipelined in-memory only subpartition, which can be consumed once.
  *
  * <p>Whenever {@link #add(BufferConsumer)} adds a finished {@link BufferConsumer} or a second

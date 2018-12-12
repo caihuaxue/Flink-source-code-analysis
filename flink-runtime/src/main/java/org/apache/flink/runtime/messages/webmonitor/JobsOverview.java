@@ -27,6 +27,7 @@ import org.apache.flink.shaded.jackson2.com.fasterxml.jackson.annotation.JsonPro
 import java.util.Collection;
 
 /**
+ * jobs的状态统计：正在执行，已完成，已经取消，失败
  * An overview of how many jobs are in which status.
  */
 public class JobsOverview implements InfoMessage {

@@ -48,14 +48,14 @@ import java.nio.ByteBuffer;
 public interface Buffer {
 
 	/**
-	 * Returns whether this buffer represents a buffer or an event.
+	 * 返回此缓冲区是否表示缓冲区或事件。
 	 *
 	 * @return <tt>true</tt> if this is a real buffer, <tt>false</tt> if this is an event
 	 */
 	boolean isBuffer();
 
 	/**
-	 * Tags this buffer to represent an event.
+	 * 标记此缓冲区以表示事件。
 	 */
 	void tagAsEvent();
 
@@ -79,13 +79,14 @@ public interface Buffer {
 	int getMemorySegmentOffset();
 
 	/**
-	 * Gets the buffer's recycler.
+	 * 获取缓冲区的回收器。
 	 *
 	 * @return buffer recycler
 	 */
 	BufferRecycler getRecycler();
 
 	/**
+	 * 释放这个缓冲区一次，即减少引用计数，如果引用计数达到，则循环使用缓冲区。
 	 * Releases this buffer once, i.e. reduces the reference count and recycles the buffer if the
 	 * reference count reaches <tt>0</tt>.
 	 *
@@ -94,13 +95,14 @@ public interface Buffer {
 	void recycleBuffer();
 
 	/**
-	 * Returns whether this buffer has been recycled or not.
+	 * 返回此缓冲区是否已被回收。
 	 *
 	 * @return <tt>true</tt> if already recycled, <tt>false</tt> otherwise
 	 */
 	boolean isRecycled();
 
 	/**
+	 * 保留缓存区进一步地应用
 	 * Retains this buffer for further use, increasing the reference counter by <tt>1</tt>.
 	 *
 	 * @return <tt>this</tt> instance (for chained calls)
@@ -110,6 +112,7 @@ public interface Buffer {
 	Buffer retainBuffer();
 
 	/**
+	 * 返回此缓冲区的可读字节的只读切片。
 	 * Returns a read-only slice of this buffer's readable bytes, i.e. between
 	 * {@link #getReaderIndex()} and {@link #getSize()}.
 	 *
@@ -134,6 +137,7 @@ public interface Buffer {
 	Buffer readOnlySlice(int index, int length);
 
 	/**
+	 * 得到缓冲区的最大容量
 	 * Returns the maximum size of the buffer, i.e. the capacity of the underlying {@link MemorySegment}.
 	 *
 	 * @return size of the buffer
@@ -141,6 +145,7 @@ public interface Buffer {
 	int getMaxCapacity();
 
 	/**
+	 * 得到 缓冲区的读索引
 	 * Returns the <tt>reader index</tt> of this buffer.
 	 *
 	 * <p>This is where readable (unconsumed) bytes start in the backing memory segment.
@@ -151,6 +156,7 @@ public interface Buffer {
 	int getReaderIndex();
 
 	/**
+	 * 设置缓存区的读索引
 	 * Sets the <tt>reader index</tt> of this buffer.
 	 *
 	 * @throws IndexOutOfBoundsException
@@ -159,9 +165,11 @@ public interface Buffer {
 	void setReaderIndex(int readerIndex) throws IndexOutOfBoundsException;
 
 	/**
+	 * 以非同步方式返回写入数据的大小，即此缓冲区的写入器索引。
 	 * Returns the size of the written data, i.e. the <tt>writer index</tt>, of this buffer in an
 	 * non-synchronized fashion.
 	 *
+	 * 这是可写字节在后备内存段中启动的地方。
 	 * <p>This is where writable bytes start in the backing memory segment.
 	 *
 	 * @return writer index (from 0 (inclusive) to the size of the backing {@link MemorySegment}

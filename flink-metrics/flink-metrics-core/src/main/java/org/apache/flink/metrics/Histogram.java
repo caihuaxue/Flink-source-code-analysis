@@ -19,6 +19,7 @@
 package org.apache.flink.metrics;
 
 /**
+ * 统计类的度量
  * Histogram interface to be used with Flink's metrics system.
  *
  * <p>The histogram allows to record values, get the current count of recorded values and create

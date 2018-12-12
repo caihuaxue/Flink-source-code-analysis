@@ -26,6 +26,7 @@ import java.util.List;
 import static org.apache.flink.util.Preconditions.checkNotNull;
 
 /**
+ * 中间结果集
  * An intermediate data set is the data set produced by an operator - either a
  * source or any intermediate operation.
  * 

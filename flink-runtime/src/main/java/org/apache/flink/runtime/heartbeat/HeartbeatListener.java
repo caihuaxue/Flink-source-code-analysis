@@ -27,9 +27,9 @@ import java.util.concurrent.CompletableFuture;
  * for the following things:
  *
  * <ul>
- *     <li>Notifications about heartbeat timeouts</li>
- *     <li>Payload reports of incoming heartbeats</li>
- *     <li>Retrieval of payloads for outgoing heartbeats</li>
+ *     <li>关于心跳超时的通知</li>
+ *     <li>传入心跳的载荷报告</li>
+ *     <li>用于传出心跳的载荷的恢复</li>
  * </ul>
  * @param <I> Type of the incoming payload
  * @param <O> Type of the outgoing payload

@@ -42,7 +42,8 @@ import java.util.Collection;
 import java.util.concurrent.CompletableFuture;
 
 /**
- * Gateway for restful endpoints.
+ * REST端点的网关。
+ * 实现此方法的网关运行REST端点，该端点可以在返回的地址下访问。
  *
  * <p>Gateways which implement this method run a REST endpoint which is reachable
  * under the returned address.

@@ -29,6 +29,7 @@ import java.io.IOException;
 import java.nio.channels.FileChannel;
 
 /**
+ * 数据输入流到本地文件系统
  * The <code>LocalDataInputStream</code> class is a wrapper class for a data
  * input stream to the local file system.
  */

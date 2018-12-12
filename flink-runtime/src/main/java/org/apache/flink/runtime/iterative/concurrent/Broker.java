@@ -31,7 +31,9 @@ public class Broker<V> {
 	private final ConcurrentMap<String, BlockingQueue<V>> mediations = new ConcurrentHashMap<String, BlockingQueue<V>>();
 
 	/**
+	 * 对象分享。
 	 * Hand in the object to share.
+	 *
 	 */
 	public void handIn(String key, V obj) {
 		if (!retrieveSharedQueue(key).offer(obj)) {

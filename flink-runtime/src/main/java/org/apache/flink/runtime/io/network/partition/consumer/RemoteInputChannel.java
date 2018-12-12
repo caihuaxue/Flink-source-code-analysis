@@ -51,7 +51,7 @@ import static org.apache.flink.util.Preconditions.checkNotNull;
 import static org.apache.flink.util.Preconditions.checkState;
 
 /**
- * An input channel, which requests a remote partition queue.
+ * 一个请求远程分区队列的输入通道。
  */
 public class RemoteInputChannel extends InputChannel implements BufferRecycler, BufferListener {
 

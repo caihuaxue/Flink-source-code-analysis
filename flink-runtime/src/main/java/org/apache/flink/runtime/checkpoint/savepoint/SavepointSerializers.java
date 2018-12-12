@@ -25,6 +25,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 /**
+ * 特定保存点的版本
  * Helper to access {@link SavepointSerializer} for a specific savepoint version.
  */
 public class SavepointSerializers {

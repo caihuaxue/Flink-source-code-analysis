@@ -22,6 +22,7 @@ import org.apache.flink.runtime.jobgraph.JobStatus;
 
 /**
  * A checkpoint ID counter.
+ * checkpoint ID计数器
  */
 public interface CheckpointIDCounter {
 
@@ -33,6 +34,7 @@ public interface CheckpointIDCounter {
 	/**
 	 * Shuts the {@link CheckpointIDCounter} service.
 	 *
+	 * 作业状态被转发并用于决定是否应该实际丢弃或保留状态
 	 * <p>The job status is forwarded and used to decide whether state should
 	 * actually be discarded or kept.
 	 *

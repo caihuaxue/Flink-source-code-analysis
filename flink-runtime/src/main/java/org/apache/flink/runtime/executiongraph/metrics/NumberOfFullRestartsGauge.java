@@ -24,6 +24,7 @@ import org.apache.flink.runtime.executiongraph.ExecutionGraph;
 import static org.apache.flink.util.Preconditions.checkNotNull;
 
 /**
+ * 返回完整重启次数的仪表。
  * Gauge which returns the number of full restarts.
  */
 public class NumberOfFullRestartsGauge implements Gauge<Long> {

@@ -19,6 +19,7 @@
 package org.apache.flink.runtime.checkpoint.decline;
 
 /**
+ * 表示由于任务未准备好执行检查点而拒绝检查点的异常。
  * Exception indicating that a checkpoint was declined because a task was not
  * ready to perform a checkpoint.
  */

@@ -32,6 +32,7 @@ import javax.annotation.Nonnull;
 
 /**
  * Default slot pool factory.
+ * 默认的slot池工厂
  */
 public class DefaultSlotPoolFactory implements SlotPoolFactory {
 

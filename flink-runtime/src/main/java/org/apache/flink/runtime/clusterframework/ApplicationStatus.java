@@ -21,7 +21,7 @@ package org.apache.flink.runtime.clusterframework;
 import org.apache.flink.runtime.jobgraph.JobStatus;
 
 /**
- * The status of an application.
+ * 应用的状态
  */
 public enum ApplicationStatus {
 
@@ -39,7 +39,7 @@ public enum ApplicationStatus {
 	
 	// ------------------------------------------------------------------------
 
-	/** The associated process exit code */
+	/** 相应的进程离开状态码 */
 	private final int processExitCode;
 	
 	private ApplicationStatus(int exitCode) {
@@ -55,6 +55,8 @@ public enum ApplicationStatus {
 	}
 
 	/**
+	 * 从jobStatus衍生出ApplicationStatus
+	 *
 	 * Derives the ApplicationStatus that should be used for a job that resulted in the given
 	 * job status. If the job is not yet in a globally terminal state, this method returns
 	 * {@link #UNKNOWN}.

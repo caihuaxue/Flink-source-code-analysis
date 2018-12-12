@@ -27,6 +27,7 @@ import java.io.Serializable;
 import java.util.Objects;
 
 /**
+ * 硬件描述描述了任务管理器可用的资源。
  * A hardware description describes the resources available to a task manager.
  */
 public final class HardwareDescription implements Serializable {

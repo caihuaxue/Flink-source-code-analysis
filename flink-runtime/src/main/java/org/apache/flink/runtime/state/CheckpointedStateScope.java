@@ -19,6 +19,7 @@
 package org.apache.flink.runtime.state;
 
 /**
+ * 检查点状态块的范围，定义状态是被一个检查点拥有，还是被多个检查点共享。
  * The scope for a chunk of checkpointed state. Defines whether state is owned by one
  * checkpoint, or whether it is shared by multiple checkpoints.
  *

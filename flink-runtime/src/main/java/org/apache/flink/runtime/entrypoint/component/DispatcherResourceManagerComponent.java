@@ -37,6 +37,8 @@ import java.util.concurrent.CompletableFuture;
 import java.util.concurrent.atomic.AtomicBoolean;
 
 /**
+ * 在同一进程中启动{@link Dispatcher}, {@link ResourceManager} 和 {@link WebMonitorEndpoint}
+ *
  * Component which starts a {@link Dispatcher}, {@link ResourceManager} and {@link WebMonitorEndpoint}
  * in the same process.
  */
@@ -73,6 +75,7 @@ public class DispatcherResourceManagerComponent<T extends Dispatcher> {
 			@Nonnull LeaderRetrievalService resourceManagerRetrievalService,
 			@Nonnull WebMonitorEndpoint<?> webMonitorEndpoint,
 			@Nonnull JobManagerMetricGroup jobManagerMetricGroup) {
+
 		this.resourceManager = resourceManager;
 		this.dispatcher = dispatcher;
 		this.dispatcherLeaderRetrievalService = dispatcherLeaderRetrievalService;

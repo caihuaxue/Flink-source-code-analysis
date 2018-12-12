@@ -159,6 +159,7 @@ public interface AccessExecutionGraph {
 	Map<String, SerializedValue<OptionalFailure<Object>>> getAccumulatorsSerialized();
 
 	/**
+	 * 返回此执行图是否存档。
 	 * Returns whether this execution graph was archived.
 	 *
 	 * @return true, if the execution graph was archived, false otherwise

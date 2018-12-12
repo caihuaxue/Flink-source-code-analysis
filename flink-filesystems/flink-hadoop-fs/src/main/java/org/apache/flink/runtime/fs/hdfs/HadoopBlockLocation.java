@@ -36,12 +36,12 @@ public final class HadoopBlockLocation implements BlockLocation {
 	private static final char DOMAIN_SEPARATOR = '.';
 
 	/**
-	 * Regular expression for an IPv4 address.
+	 * 匹配IPv4的正则表达式
 	 */
 	private static final Pattern IPV4_PATTERN = Pattern.compile("^\\d+\\.\\d+\\.\\d+\\.\\d+$");
 
 	/**
-	 * The original Hadoop block location object.
+	 * 原始的Hadoop块位置对象
 	 */
 	private final org.apache.hadoop.fs.BlockLocation blockLocation;
 

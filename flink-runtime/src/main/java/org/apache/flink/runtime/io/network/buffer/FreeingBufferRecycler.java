@@ -22,6 +22,7 @@ import org.apache.flink.core.memory.MemorySegment;
 
 /**
  * A simple buffer recycler that frees the memory segments.
+ * 释放memory segments的简单缓冲循环
  */
 public class FreeingBufferRecycler implements BufferRecycler {
 

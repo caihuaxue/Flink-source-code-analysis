@@ -35,7 +35,7 @@ import static org.apache.flink.util.Preconditions.checkNotNull;
 /**
  * An input channel consumes a single {@link ResultSubpartitionView}.
  *
- * <p>For each channel, the consumption life cycle is as follows:
+ * 对于每一个通道，消费的生命周期包括：请求子分区，得到下一个缓冲区和释放所有资源。
  * <ol>
  * <li>{@link #requestSubpartition(int)}</li>
  * <li>{@link #getNextBuffer()}</li>

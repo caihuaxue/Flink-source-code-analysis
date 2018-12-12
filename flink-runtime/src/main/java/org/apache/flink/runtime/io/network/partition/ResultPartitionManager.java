@@ -34,6 +34,7 @@ import java.util.Map;
 import static org.apache.flink.util.Preconditions.checkState;
 
 /**
+ * 结果分区管理器跟踪任务管理器当前生成/使用的所有分区。
  * The result partition manager keeps track of all currently produced/consumed partitions of a
  * task manager.
  */

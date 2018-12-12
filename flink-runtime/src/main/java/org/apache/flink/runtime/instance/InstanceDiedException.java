@@ -19,6 +19,7 @@
 package org.apache.flink.runtime.instance;
 
 /**
+ * 一个特殊的实例发出信号，表明一个实例上的尝试操作是不可能的，因为该实例已经死亡。
  * A special instance signaling that an attempted operation on an instance is not possible,
  * because the instance has died.
  */

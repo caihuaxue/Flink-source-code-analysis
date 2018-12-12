@@ -22,7 +22,7 @@ import java.io.IOException;
 import java.util.Optional;
 
 /**
- * A factory for buffer pools.
+ * 缓冲池的工厂
  */
 public interface BufferPoolFactory {
 

@@ -29,10 +29,11 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
+ * 配置安全的工具类
  * Utils for configuring security. The following security subsystems are supported:
- * 1. Java Authentication and Authorization Service (JAAS)
- * 2. Hadoop's User Group Information (UGI)
- * 3. ZooKeeper's process-wide security settings.
+ * 1. Java验证和授权服务 (JAAS)
+ * 2. Hadoop的用户组信息 (UGI)
+ * 3. Zookeeper的全过程安全设置。
  */
 public class SecurityUtils {
 
@@ -51,9 +52,10 @@ public class SecurityUtils {
 	}
 
 	/**
+	 * 安装全进程安全配置。
 	 * Installs a process-wide security configuration.
 	 *
-	 * <p>Applies the configuration using the available security modules (i.e. Hadoop, JAAS).
+	 * <p>使用可用的安全模块应用配置(i.e. Hadoop, JAAS).
 	 */
 	public static void install(SecurityConfiguration config) throws Exception {
 

@@ -24,6 +24,7 @@ import org.apache.flink.core.fs.BlockLocation;
 import java.io.IOException;
 
 /**
+ * 本地文件系统
  * Implementation of the {@link BlockLocation} interface for a local file system.
  */
 @Internal

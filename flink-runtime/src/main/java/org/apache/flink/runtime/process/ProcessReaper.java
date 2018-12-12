@@ -24,6 +24,7 @@ import akka.actor.UntypedActor;
 import org.slf4j.Logger;
 
 /**
+ * 监视其他actors，并在actor终止时杀死JVM。
  * Utility actors that monitors other actors and kills the JVM upon
  * actor termination.
  */

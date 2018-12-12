@@ -19,6 +19,7 @@
 package org.apache.flink.runtime.checkpoint.decline;
 
 /**
+ * 由于在未决检查点的屏障之前在输入上接收到更新的检查点屏障，因此拒绝检查点的异常。
  * Exception indicating that a checkpoint was declined because a newer checkpoint
  * barrier was received on an input before the pending checkpoint's barrier. 
  */

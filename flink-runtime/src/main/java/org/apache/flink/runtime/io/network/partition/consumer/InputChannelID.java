@@ -24,6 +24,7 @@ import org.apache.flink.shaded.netty4.io.netty.buffer.ByteBuf;
 
 /**
  * Identifier for input channels.
+ * 输入通道的标识
  */
 public class InputChannelID extends AbstractID {
 

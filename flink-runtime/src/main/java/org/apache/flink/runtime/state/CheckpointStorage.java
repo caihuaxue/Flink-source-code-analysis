@@ -25,6 +25,7 @@ import javax.annotation.Nullable;
 import java.io.IOException;
 
 /**
+ * 检查点存储实现检查点数据和元数据流的持久存储。
  * CheckpointStorage implements the durable storage of checkpoint data and metadata streams.
  * An individual checkpoint or savepoint is stored to a {@link CheckpointStorageLocation},
  * created by this class.
@@ -32,6 +33,7 @@ import java.io.IOException;
 public interface CheckpointStorage {
 
 	/**
+	 *  检查此后端是否支持数据的高度可用存储。
 	 * Checks whether this backend supports highly available storage of data.
 	 *
 	 * <p>Some state backends may not support highly-available durable storage, with default settings,
@@ -40,11 +42,13 @@ public interface CheckpointStorage {
 	boolean supportsHighlyAvailableStorage();
 
 	/**
+	 * 检查是否有默认的保存点存储路径配置
 	 * Checks whether the storage has a default savepoint location configured.
 	 */
 	boolean hasDefaultSavepointLocation();
 
 	/**
+	 * 将指向checkpoint/savepoint的指针解析成检查点的目录路径
 	 * Resolves the given pointer to a checkpoint/savepoint into a checkpoint location. The location
 	 * supports reading the checkpoint metadata, or disposing the checkpoint storage location.
 	 *
@@ -60,6 +64,7 @@ public interface CheckpointStorage {
 	CompletedCheckpointStorageLocation resolveCheckpoint(String externalPointer) throws IOException;
 
 	/**
+	 * 利用给定的ID来初始化新的检查点的存储路径
 	 * Initializes a storage location for new checkpoint with the given ID.
 	 *
 	 * <p>The returned storage location can be used to write the checkpoint data and metadata

@@ -25,7 +25,7 @@ import java.io.Serializable;
 import static org.apache.flink.util.Preconditions.checkNotNull;
 
 /**
- * A snapshot of the checkpoint stats.
+ * checkpoint统计的快照
  */
 public class CheckpointStatsSnapshot implements Serializable {
 
@@ -40,7 +40,7 @@ public class CheckpointStatsSnapshot implements Serializable {
 	/** Snapshot of the checkpoint history. */
 	private final CheckpointStatsHistory history;
 
-	/** The latest restored checkpoint operation. */
+	/** The latest restored checkpoint operation.最新的恢复checkpoint操作 */
 	@Nullable
 	private final RestoredCheckpointStats latestRestoredCheckpoint;
 

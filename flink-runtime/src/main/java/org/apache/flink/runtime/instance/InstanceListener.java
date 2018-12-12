@@ -19,6 +19,7 @@
 package org.apache.flink.runtime.instance;
 
 /**
+ * 通知可用性消失
  * Classes implementing the InstanceListener interface can be notified about
  * the availability disappearance of instances.
  */

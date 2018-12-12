@@ -39,6 +39,7 @@ import static org.apache.flink.util.Preconditions.checkNotNull;
 import static org.apache.flink.util.Preconditions.checkState;
 
 /**
+ * 一个简单的领导者选举服务，在竞争者中选择一个领导者并通知听众。
  * A simple leader election service, which selects a leader among contenders and notifies listeners.
  *
  * <p>An election service for contenders can be created via {@link #createLeaderElectionService()},

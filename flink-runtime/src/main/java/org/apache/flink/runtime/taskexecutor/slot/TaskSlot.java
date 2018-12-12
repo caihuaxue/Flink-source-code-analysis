@@ -33,8 +33,8 @@ import java.util.Map;
  * Container for multiple {@link Task} belonging to the same slot. A {@link TaskSlot} can be in one
  * of the following states:
  * <ul>
- *     <li>Free - The slot is empty and not allocated to a job</li>
- *     <li>Releasing - The slot is about to be freed after it has become empty.</li>
+ *     <li>Free - 槽是空的，没有分配给作业。</li>
+ *     <li>Releasing - 这个空隙在空空如也之后就要释放了。.</li>
  *     <li>Allocated - The slot has been allocated for a job.</li>
  *     <li>Active - The slot is in active use by a job manager which is the leader of the allocating job.</li>
  * </ul>
@@ -56,10 +56,10 @@ public class TaskSlot {
 	/** Resource characteristics for this slot. */
 	private final ResourceProfile resourceProfile;
 
-	/** Tasks running in this slot. */
+	/** 在这个slot中运行的任务 */
 	private final Map<ExecutionAttemptID, Task> tasks;
 
-	/** State of this slot. */
+	/** slot的状态 */
 	private TaskSlotState state;
 
 	/** Job id to which the slot has been allocated; null if not allocated. */
@@ -72,8 +72,10 @@ public class TaskSlot {
 		Preconditions.checkArgument(0 <= index, "The index must be greater than 0.");
 		this.index = index;
 		this.resourceProfile = Preconditions.checkNotNull(resourceProfile);
-
+        // 一个slot可以同时执行4个任务
 		this.tasks = new HashMap<>(4);
+
+		//初始化时，slot是空闲的
 		this.state = TaskSlotState.FREE;
 
 		this.jobId = null;
@@ -134,6 +136,7 @@ public class TaskSlot {
 	}
 
 	/**
+	 * 获取在这个任务槽中运行的所有任务。
 	 * Get all tasks running in this task slot.
 	 *
 	 * @return Iterator to all currently contained tasks in this task slot.

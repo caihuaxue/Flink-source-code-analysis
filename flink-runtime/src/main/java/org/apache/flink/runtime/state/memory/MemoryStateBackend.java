@@ -47,7 +47,9 @@ import java.io.IOException;
 import static org.apache.flink.util.Preconditions.checkArgument;
 
 /**
+ * 在JVM中保留着TaskManager的工作状态
  * This state backend holds the working state in the memory (JVM heap) of the TaskManagers.
+ *
  * The state backend checkpoints state directly to the JobManager's memory (hence the backend's name),
  * but the checkpoints will be persisted to a file system for high-availability setups and savepoints.
  * The MemoryStateBackend is consequently a FileSystem-based backend that can work without a

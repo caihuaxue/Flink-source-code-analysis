@@ -51,6 +51,7 @@ public class AccumulatorRegistry {
 
 	/**
 	 * Creates a snapshot of this accumulator registry.
+	 * 创建累加器注册的一个快照
 	 * @return a serialized accumulator map
 	 */
 	public AccumulatorSnapshot getSnapshot() {
@@ -64,6 +65,7 @@ public class AccumulatorRegistry {
 
 	/**
 	 * Gets the map for user-defined accumulators.
+	 * 得到用户自定义的累计器的Map
 	 */
 	public Map<String, Accumulator<?, ?>> getUserMap() {
 		return userAccumulators;

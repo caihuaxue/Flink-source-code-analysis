@@ -29,6 +29,7 @@ import org.apache.flink.runtime.executiongraph.ExecutionAttemptID;
 import org.apache.flink.util.SerializedThrowable;
 
 /**
+ * 拒绝Checkpoint
  * This message is sent from the {@link org.apache.flink.runtime.taskmanager.TaskManager} to the
  * {@link org.apache.flink.runtime.jobmanager.JobManager} to tell the checkpoint coordinator
  * that a checkpoint request could not be heeded. This can happen if a Task is already in
@@ -67,7 +68,7 @@ public class DeclineCheckpoint extends AbstractCheckpointMessage implements java
 	// --------------------------------------------------------------------------------------------
 
 	/**
-	 * Gets the reason why the checkpoint was declined.
+	 * 获取检查点被拒绝的原因。
 	 * 
 	 * @return The reason why the checkpoint was declined
 	 */

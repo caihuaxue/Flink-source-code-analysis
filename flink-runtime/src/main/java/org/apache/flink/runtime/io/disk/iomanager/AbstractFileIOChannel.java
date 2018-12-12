@@ -36,13 +36,13 @@ public abstract class AbstractFileIOChannel implements FileIOChannel {
 	/** The ID of the underlying channel. */
 	protected final FileIOChannel.ID id;
 	
-	/** A file channel for NIO access to the file. */
+	/** 用于文件访问的NIO文件通道 */
 	protected final FileChannel fileChannel;
 	
 	
 	/**
-	 * Creates a new channel to the path indicated by the given ID. The channel hands IO requests to
-	 * the given request queue to be processed.
+	 * 为给定ID所指示的路径创建一个新的通道。
+	 * 通道将IO请求分发给定的请求队列进行处理。
 	 * 
 	 * @param channelID The id describing the path of the file that the channel accessed.
 	 * @param writeEnabled Flag describing whether the channel should be opened in read/write mode, rather

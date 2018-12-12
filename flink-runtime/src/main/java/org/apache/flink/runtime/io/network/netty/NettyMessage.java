@@ -51,6 +51,7 @@ import static org.apache.flink.util.Preconditions.checkArgument;
 import static org.apache.flink.util.Preconditions.checkNotNull;
 
 /**
+ * 一个简单而通用的接口，将消息序列化到netty的缓冲区。
  * A simple and generic interface to serialize messages to Netty's buffer space.
  *
  * <p>This class must be public as long as we are using a Netty version prior to 4.0.45. Please check FLINK-7845 for
@@ -91,6 +92,7 @@ public abstract class NettyMessage {
 	}
 
 	/**
+	 * 申请一个缓存（包括header和content）部分，并且添加一些信息到frame decoder中去。
 	 * Allocates a new (header and contents) buffer and adds some header information for the frame
 	 * decoder.
 	 *
@@ -118,15 +120,15 @@ public abstract class NettyMessage {
 	 * the contents as an integer to position <tt>0</tt>!
 	 *
 	 * @param allocator
-	 * 		byte buffer allocator to use
+	 * 		要使用的字节缓冲分配器
 	 * @param id
 	 * 		{@link NettyMessage} subclass ID
 	 * @param messageHeaderLength
-	 * 		additional header length that should be part of the allocated buffer and is written
-	 * 		outside of this method
+	 * 		附加的头部长度，它应该是分配的缓冲区的一部分，并且被写入此方法之外
 	 * @param contentLength
 	 * 		content length (or <tt>-1</tt> if unknown)
 	 * @param allocateForContent
+	 *      是否为缓冲区中的实际内容腾出空间
 	 * 		whether to make room for the actual content in the buffer (<tt>true</tt>) or whether to
 	 * 		only return a buffer with the header information (<tt>false</tt>)
 	 *
@@ -159,8 +161,12 @@ public abstract class NettyMessage {
 
 	// ------------------------------------------------------------------------
 	// Generic NettyMessage encoder and decoder
+	// 一般的Netty信息的编码和解码
 	// ------------------------------------------------------------------------
 
+	/**
+	 *  Netty信息编码
+	 */
 	@ChannelHandler.Sharable
 	static class NettyMessageEncoder extends ChannelOutboundHandlerAdapter {
 
@@ -205,7 +211,7 @@ public abstract class NettyMessage {
 		private final boolean restoreOldNettyBehaviour;
 
 		/**
-		 * Creates a new message decoded with the required frame properties.
+		 * 创建一个用所需的帧属性解码的新消息。
 		 *
 		 * @param restoreOldNettyBehaviour
 		 * 		restore Netty 4.0.27 code in {@link LengthFieldBasedFrameDecoder#extractFrame} to

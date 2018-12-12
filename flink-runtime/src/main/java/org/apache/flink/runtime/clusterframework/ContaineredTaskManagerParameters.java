@@ -27,6 +27,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 /**
+ * 该类描述了启动TaskMeor进程的基本参数。
  * This class describes the basic parameters for launching a TaskManager process.
  */
 public class ContaineredTaskManagerParameters implements java.io.Serializable {

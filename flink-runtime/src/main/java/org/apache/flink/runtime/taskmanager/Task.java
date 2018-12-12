@@ -102,7 +102,9 @@ import static org.apache.flink.util.Preconditions.checkNotNull;
 import static org.apache.flink.util.Preconditions.checkState;
 
 /**
+ * 该任务表示在TaskManager上执行并行子任务。
  * The Task represents one execution of a parallel subtask on a TaskManager.
+ *
  * A Task wraps a Flink operator (which may be a user function) and
  * runs it, providing all services necessary for example to consume input data,
  * produce its results (intermediate result partitions) and communicate

@@ -21,6 +21,7 @@ package org.apache.flink.runtime.io.network.buffer;
 import java.io.IOException;
 
 /**
+ * 缓冲区提供程序，以同步或异步方式请求缓冲区。
  * A buffer provider to request buffers from in a synchronous or asynchronous fashion.
  *
  * <p>The data producing side (result partition writers) request buffers in a synchronous fashion,

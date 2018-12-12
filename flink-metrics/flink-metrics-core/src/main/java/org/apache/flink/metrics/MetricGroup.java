@@ -22,7 +22,7 @@ import java.util.Map;
 
 /**
  * A MetricGroup is a named container for {@link Metric Metrics} and further metric subgroups.
- *
+ * 这个类的实例可用于向Flink注册新的度量，并基于组名创建嵌套层次结构。
  * <p>Instances of this class can be used to register new metrics with Flink and to create a nested
  * hierarchy based on the group names.
  *

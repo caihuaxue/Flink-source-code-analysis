@@ -25,6 +25,7 @@ import org.apache.flink.runtime.checkpoint.CheckpointOptions;
 import org.apache.flink.runtime.executiongraph.ExecutionAttemptID;
 
 /**
+ * 触发检查点
  * This message is sent from the {@link org.apache.flink.runtime.jobmanager.JobManager} to the
  * {@link org.apache.flink.runtime.taskmanager.TaskManager} to tell a certain task to trigger its
  * checkpoint.

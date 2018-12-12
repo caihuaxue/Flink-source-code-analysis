@@ -19,6 +19,7 @@
 package org.apache.flink.runtime.taskexecutor.slot;
 
 /**
+ * slot的状态
  * Internal task slot state
  */
 enum TaskSlotState {

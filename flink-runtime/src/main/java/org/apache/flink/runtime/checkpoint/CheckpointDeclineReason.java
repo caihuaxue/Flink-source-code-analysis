@@ -19,7 +19,7 @@
 package org.apache.flink.runtime.checkpoint;
 
 /**
- * Various reasons why a checkpoint was declined.
+ * 检查点被拒绝的各种原因。
  */
 public enum CheckpointDeclineReason {
 

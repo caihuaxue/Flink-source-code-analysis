@@ -22,6 +22,7 @@ import org.apache.flink.core.fs.FileStatus;
 import org.apache.flink.core.fs.Path;
 
 /**
+ * 分布式文件系统的状态
  * Concrete implementation of the {@link FileStatus} interface for the
  * Hadoop Distribution File System.
  */

@@ -21,7 +21,9 @@ package org.apache.flink.runtime.checkpoint;
 import java.io.Serializable;
 
 /**
+ * 封装检查点的所有元数据。
  * Encapsulates all the meta data for a checkpoint.
+ *
  */
 public class CheckpointMetaData implements Serializable {
 

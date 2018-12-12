@@ -23,7 +23,7 @@ import java.io.Serializable;
 import static org.apache.flink.util.Preconditions.checkNotNull;
 
 /**
- * Savepoint restore settings.
+ * Savepoint restore settings.保存点恢复设置
  */
 public class SavepointRestoreSettings implements Serializable {
 

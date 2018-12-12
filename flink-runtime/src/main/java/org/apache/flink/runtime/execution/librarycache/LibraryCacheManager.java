@@ -31,6 +31,7 @@ import java.util.Collection;
 public interface LibraryCacheManager {
 
 	/**
+	 * 返回与ID关联的用户代码类加载器。
 	 * Returns the user code class loader associated with id.
 	 *
 	 * @param id identifying the job

@@ -20,6 +20,7 @@ package org.apache.flink.runtime.checkpoint;
 
 /**
  *  The type of checkpoint to perform.
+ *  检查点和保存点
  */
 public enum CheckpointType {
 

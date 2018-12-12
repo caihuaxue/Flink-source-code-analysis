@@ -85,6 +85,7 @@ public class NettyConfig {
 
 	// ------------------------------------------------------------------------
 
+	// 网络传输类型
 	enum TransportType {
 		NIO, EPOLL, AUTO
 	}
@@ -103,6 +104,9 @@ public class NettyConfig {
 
 	private final Configuration config; // optional configuration
 
+	/**
+	 * 构造函数
+	 */
 	public NettyConfig(
 			InetAddress serverAddress,
 			int serverPort,

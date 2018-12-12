@@ -21,6 +21,7 @@ package org.apache.flink.runtime.blob;
 import java.io.Closeable;
 
 /**
+ * 一个简单的存储和检索二进制大对象
  * A simple store and retrieve binary large objects (BLOBs).
  */
 public interface BlobService extends Closeable {

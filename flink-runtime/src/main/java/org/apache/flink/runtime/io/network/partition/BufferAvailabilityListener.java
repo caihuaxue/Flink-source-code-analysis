@@ -25,7 +25,7 @@ package org.apache.flink.runtime.io.network.partition;
 public interface BufferAvailabilityListener {
 
 	/**
-	 * Called whenever there might be new data available.
+	 * 每当可能有新数据可用时调用。
 	 */
 	void notifyDataAvailable();
 }

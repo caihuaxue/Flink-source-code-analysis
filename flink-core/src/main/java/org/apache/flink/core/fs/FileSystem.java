@@ -214,10 +214,10 @@ public abstract class FileSystem {
 	/** Object used to protect calls to specific methods.*/
 	private static final ReentrantLock LOCK = new ReentrantLock(true);
 
-	/** Cache for file systems, by scheme + authority. */
+	/** 文件系统缓存, by scheme + authority. */
 	private static final HashMap<FSKey, FileSystem> CACHE = new HashMap<>();
 
-	/** All available file system factories. */
+	/** 所有可用的文件系统工厂 */
 	private static final List<FileSystemFactory> RAW_FACTORIES = loadFileSystems();
 
 	/** Mapping of file system schemes to the corresponding factories,
@@ -232,11 +232,11 @@ public abstract class FileSystem {
 	private static URI defaultScheme;
 
 	// ------------------------------------------------------------------------
-	//  Initialization
+	//  初始化
 	// ------------------------------------------------------------------------
 
 	/**
-	 * Initializes the shared file system settings.
+	 * 初始化共享文件系统设置。
 	 *
 	 * <p>The given configuration is passed to each file system factory to initialize the respective
 	 * file systems. Because the configuration of file systems may be different subsequent to the call
@@ -252,13 +252,17 @@ public abstract class FileSystem {
 	 * @param config the configuration from where to fetch the parameter.
 	 */
 	public static void initialize(Configuration config) throws IOException, IllegalConfigurationException {
+		// 加显性锁
 		LOCK.lock();
 		try {
-			// make sure file systems are re-instantiated after re-configuration
+			//确保在重新配置之后重新实例化文件系统
+			// 清理缓存
 			CACHE.clear();
+
+			// 文件系统工厂清空
 			FS_FACTORIES.clear();
 
-			// configure all file system factories
+			// 配置所有的文件系统工厂
 			for (FileSystemFactory factory : RAW_FACTORIES) {
 				factory.configure(config);
 				String scheme = factory.getScheme();
@@ -267,7 +271,7 @@ public abstract class FileSystem {
 				FS_FACTORIES.put(scheme, fsf);
 			}
 
-			// configure the default (fallback) factory
+			// configure the default (fallback) factory 配置默认（回退）工厂
 			FALLBACK_FACTORY.configure(config);
 
 			// also read the default file system scheme
@@ -1036,6 +1040,7 @@ public abstract class FileSystem {
 	// ------------------------------------------------------------------------
 
 	/**
+	 * 文件系统的唯一标识，通过schema和authority来标识
 	 * An identifier of a file system, via its scheme and its authority.
 	 */
 	private static final class FSKey {

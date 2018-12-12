@@ -36,6 +36,7 @@ import java.util.concurrent.TimeUnit;
 import scala.concurrent.duration.FiniteDuration;
 
 /**
+ * {@link ActorSystem} 作为{@link ScheduledExecutor}的调节器
  * Adapter to use a {@link ActorSystem} as a {@link ScheduledExecutor}.
  */
 public final class ActorSystemScheduledExecutorAdapter implements ScheduledExecutor {

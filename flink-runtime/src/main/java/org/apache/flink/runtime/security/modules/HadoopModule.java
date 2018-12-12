@@ -42,6 +42,7 @@ import java.util.Collection;
 import static org.apache.flink.util.Preconditions.checkNotNull;
 
 /**
+ * 负责安装Hadoop登录用户。
  * Responsible for installing a Hadoop login user.
  */
 public class HadoopModule implements SecurityModule {

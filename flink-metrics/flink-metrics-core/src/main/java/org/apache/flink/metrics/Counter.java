@@ -19,6 +19,7 @@
 package org.apache.flink.metrics;
 
 /**
+ * 计数的度量
  * A Counter is a {@link Metric} that measures a count.
  */
 public interface Counter extends Metric {

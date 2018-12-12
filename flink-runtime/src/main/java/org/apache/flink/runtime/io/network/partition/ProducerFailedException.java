@@ -22,6 +22,7 @@ import org.apache.flink.runtime.execution.CancelTaskException;
 import org.apache.flink.util.SerializedThrowable;
 
 /**
+ * 网络堆栈级别异常通知远程接收器关于一个失败的分区生产者。
  * Network-stack level Exception to notify remote receiver about a failed
  * partition producer.
  */

@@ -19,6 +19,7 @@
 package org.apache.flink.runtime.checkpoint.decline;
 
 /**
+ * 检查点太多，因为字节太多。异常
  * Exception indicating that a checkpoint was declined because too many bytes were
  * buffered in the alignment phase.
  */

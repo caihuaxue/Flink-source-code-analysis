@@ -22,6 +22,7 @@ import java.io.IOException;
 
 /**
  * Interface for releasing memory buffers.
+ * 释放缓冲池的接口
  */
 public interface BufferPoolOwner {
 

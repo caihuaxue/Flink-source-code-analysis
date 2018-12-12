@@ -23,7 +23,7 @@ import org.apache.flink.api.common.state.AggregatingState;
 /**
  * The peer to the {@link AggregatingState} in the internal state type hierarchy.
  * 
- * <p>See {@link InternalKvState} for a description of the internal state hierarchy.
+ * <p>See {@link InternalKvState} for a description of the 内部状态层次结构。
  *
  * @param <K> The type of key the state is associated to
  * @param <N> The type of the namespace

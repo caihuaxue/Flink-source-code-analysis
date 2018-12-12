@@ -28,7 +28,7 @@ import static org.apache.flink.configuration.ConfigOptions.key;
 import static org.apache.flink.configuration.description.LinkElement.link;
 
 /**
- * The set of configuration options relating to security.
+ * 与安全有关的配置选项集。
  */
 @PublicEvolving
 @ConfigGroups(groups = {
@@ -38,7 +38,7 @@ import static org.apache.flink.configuration.description.LinkElement.link;
 public class SecurityOptions {
 
 	// ------------------------------------------------------------------------
-	//  Kerberos Options
+	//  Kerberos选项
 	// ------------------------------------------------------------------------
 
 	public static final ConfigOption<String> KERBEROS_LOGIN_PRINCIPAL =
@@ -67,7 +67,7 @@ public class SecurityOptions {
 
 
 	// ------------------------------------------------------------------------
-	//  ZooKeeper Security Options
+	//  ZooKeeper安全选项
 	// ------------------------------------------------------------------------
 
 	public static final ConfigOption<Boolean> ZOOKEEPER_SASL_DISABLE =
@@ -83,7 +83,7 @@ public class SecurityOptions {
 			.defaultValue("Client");
 
 	// ------------------------------------------------------------------------
-	//  SSL Security Options
+	//  SSL安全选项
 	// ------------------------------------------------------------------------
 
 	/**

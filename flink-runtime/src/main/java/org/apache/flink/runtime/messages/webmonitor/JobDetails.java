@@ -40,6 +40,7 @@ import java.util.Arrays;
 import static org.apache.flink.util.Preconditions.checkNotNull;
 
 /**
+ * job的详细信息
  * An actor message with a detailed overview of the current status of a job.
  */
 @JsonSerialize(using = JobDetails.JobDetailsSerializer.class)
@@ -188,9 +189,15 @@ public class JobDetails implements Serializable {
 				'}';
 	}
 
+	/**
+	 * 任务详情的序列化
+	 */
 	public static final class JobDetailsSerializer extends StdSerializer<JobDetails> {
 		private static final long serialVersionUID = 7915913423515194428L;
 
+		/**
+		 * 构造函数
+		 */
 		public JobDetailsSerializer() {
 			super(JobDetails.class);
 		}
@@ -226,6 +233,9 @@ public class JobDetails implements Serializable {
 		}
 	}
 
+	/**
+	 * 任务详情的反序列化
+	 */
 	public static final class JobDetailsDeserializer extends StdDeserializer<JobDetails> {
 
 		private static final long serialVersionUID = 6089784742093294800L;

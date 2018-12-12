@@ -22,9 +22,11 @@ import org.apache.flink.api.common.state.State;
 import org.apache.flink.api.common.typeutils.TypeSerializer;
 
 /**
+ * InternalKvState是内部状态类型层次的根节点，类似于State是所有公共API状态层次的根节点一样
  * The {@code InternalKvState} is the root of the internal state type hierarchy, similar to the
  * {@link State} being the root of the public API state hierarchy.
- * 
+ *
+ * 内部状态类提供对命名空间的getter和setter的访问，以及对附加功能的访问，如原始值访问或状态合并
  * <p>The internal state classes give access to the namespace getters and setters and access to
  * additional functionality, like raw value access or state merging.
  * 

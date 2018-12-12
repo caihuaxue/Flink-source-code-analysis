@@ -87,16 +87,16 @@ public class MemoryManager {
 	/** The initial total size, for verification. */
 	private final int totalNumPages;
 
-	/** The total size of the memory managed by this memory manager. */
+	/** 内存管理器管理的内存的总大小。*/
 	private final long memorySize;
 
-	/** Number of slots of the task manager. */
+	/** task manager的slots数量 */
 	private final int numberOfSlots;
 
-	/** Flag marking whether the memory manager immediately allocates the memory. */
+	/** 标记内存管理器是否立即分配内存。*/
 	private final boolean isPreAllocated;
 
-	/** The number of memory pages that have not been allocated and are available for lazy allocation. */
+	/** 未分配的内存页数，可用于惰性分配。*/
 	private int numNonAllocatedPages;
 
 	/** Flag whether the close() has already been invoked. */
@@ -104,6 +104,7 @@ public class MemoryManager {
 
 
 	/**
+	 * 构造函数
 	 * Creates a memory manager with the given capacity, using the default page size.
 	 *
 	 * @param memorySize The total size of the memory to be managed by this memory manager.
@@ -152,6 +153,7 @@ public class MemoryManager {
 			throw new IllegalArgumentException("The given number of memory bytes (" + memorySize
 					+ ") corresponds to more than MAX_INT pages.");
 		}
+		// 整个内存页数
 		this.totalNumPages = (int) numPagesLong;
 		if (this.totalNumPages < 1) {
 			throw new IllegalArgumentException("The given amount of memory amounted to less than one page.");
@@ -164,9 +166,11 @@ public class MemoryManager {
 		final int memToAllocate = preAllocateMemory ? this.totalNumPages : 0;
 
 		switch (memoryType) {
+			// 堆内存
 			case HEAP:
 				this.memoryPool = new HybridHeapMemoryPool(memToAllocate, pageSize);
 				break;
+			// 非堆内存
 			case OFF_HEAP:
 				if (!preAllocateMemory) {
 					LOG.warn("It is advisable to set 'taskmanager.memory.preallocate' to true when" +
@@ -189,24 +193,22 @@ public class MemoryManager {
 	}
 
 	// ------------------------------------------------------------------------
-	//  Shutdown
+	//  关闭
 	// ------------------------------------------------------------------------
 
 	/**
-	 * Shuts the memory manager down, trying to release all the memory it managed. Depending
-	 * on implementation details, the memory does not necessarily become reclaimable by the
-	 * garbage collector, because there might still be references to allocated segments in the
-	 * code that allocated them from the memory manager.
+	 * 关闭内存管理器，试图释放它管理的所有内存。
+	 * 根据实现细节，垃圾收集器不一定能够回收内存，因为从内存管理器分配内存的代码中可能仍然存在对已分配段的引用
 	 */
 	public void shutdown() {
 		// -------------------- BEGIN CRITICAL SECTION -------------------
 		synchronized (lock) {
 			if (!isShutDown) {
-				// mark as shutdown and release memory
+				// 标记为shutdown，并且释放内存
 				isShutDown = true;
 				numNonAllocatedPages = 0;
 
-				// go over all allocated segments and release them
+				// 遍历所有已经分配的segments，然后释放他们
 				for (Set<MemorySegment> segments : allocatedSegments.values()) {
 					for (MemorySegment seg : segments) {
 						seg.free();
@@ -220,7 +222,7 @@ public class MemoryManager {
 	}
 
 	/**
-	 * Checks whether the MemoryManager has been shut down.
+	 * 检查内存管理是否已经全部被关闭
 	 *
 	 * @return True, if the memory manager is shut down, false otherwise.
 	 */
@@ -229,6 +231,7 @@ public class MemoryManager {
 	}
 
 	/**
+	 * 检查是否是否释放空了
 	 * Checks if the memory manager all memory available.
 	 *
 	 * @return True, if the memory manager is empty and valid, false if it is not empty or corrupted.
@@ -242,10 +245,11 @@ public class MemoryManager {
 	}
 
 	// ------------------------------------------------------------------------
-	//  Memory allocation and release
+	//  内存分配和释放
 	// ------------------------------------------------------------------------
 
 	/**
+	 * 从内存管理器分配一组内存段
 	 * Allocates a set of memory segments from this memory manager. If the memory manager pre-allocated the
 	 * segments, they will be taken from the pool of memory segments. Otherwise, they will be allocated
 	 * as part of this call.
@@ -282,6 +286,7 @@ public class MemoryManager {
 
 		// reserve array space, if applicable
 		if (target instanceof ArrayList) {
+			// 保证最小容量，允许动态扩容
 			((ArrayList<MemorySegment>) target).ensureCapacity(numPages);
 		}
 
@@ -305,7 +310,7 @@ public class MemoryManager {
 				allocatedSegments.put(owner, segmentsForOwner);
 			}
 
-			if (isPreAllocated) {
+			if (isPreAllocated) {   // 全部预先分配的情况
 				for (int i = numPages; i > 0; i--) {
 					MemorySegment segment = memoryPool.requestSegmentFromPool(owner);
 					target.add(segment);
@@ -325,6 +330,7 @@ public class MemoryManager {
 	}
 
 	/**
+	 * 释放掉特定内存段的内存
 	 * Tries to release the memory for the specified segment. If the segment has already been released or
 	 * is null, the request is simply ignored.
 	 *
@@ -380,7 +386,7 @@ public class MemoryManager {
 	}
 
 	/**
-	 * Tries to release many memory segments together.
+	 * 一次性将很多segments一起释放掉
 	 *
 	 * <p>If the memory manager manages pre-allocated memory, the memory segment goes back to the memory pool.
 	 * Otherwise, the segment is only freed and made eligible for reclamation by the GC.
@@ -465,7 +471,7 @@ public class MemoryManager {
 	}
 
 	/**
-	 * Releases all memory segments for the given owner.
+	 * 释放掉所有的segments
 	 *
 	 * @param owner The owner memory segments are to be released.
 	 */
@@ -507,10 +513,11 @@ public class MemoryManager {
 	}
 
 	// ------------------------------------------------------------------------
-	//  Properties, sizes and size conversions
+	// 属性，大小和大小转换
 	// ------------------------------------------------------------------------
 
 	/**
+	 *
 	 * Gets the type of memory (heap / off-heap) managed by this memory manager.
 	 *
 	 * @return The type of memory managed by this memory manager.
@@ -520,7 +527,7 @@ public class MemoryManager {
 	}
 
 	/**
-	 * Checks whether this memory manager pre-allocates the memory.
+	 * 是预先分配合适按需分配
 	 *
 	 * @return True if the memory manager pre-allocates the memory, false if it allocates as needed.
 	 */
@@ -529,6 +536,7 @@ public class MemoryManager {
 	}
 
 	/**
+	 * 内存页的大小
 	 * Gets the size of the pages handled by the memory manager.
 	 *
 	 * @return The size of the pages handled by the memory manager.
@@ -592,7 +600,7 @@ public class MemoryManager {
 
 
 	// ------------------------------------------------------------------------
-	//  Memory Pools
+	//  内存池抽象类
 	// ------------------------------------------------------------------------
 
 	abstract static class MemoryPool {
@@ -608,6 +616,9 @@ public class MemoryManager {
 		abstract void clear();
 	}
 
+	/**
+	 * 混合堆内存池类
+	 */
 	static final class HybridHeapMemoryPool extends MemoryPool {
 
 		/** The collection of available memory segments. */
@@ -658,6 +669,10 @@ public class MemoryManager {
 		}
 	}
 
+	/**
+	 *
+	 * 混合非堆内存池
+	 */
 	static final class HybridOffHeapMemoryPool extends MemoryPool {
 
 		/** The collection of available memory segments. */

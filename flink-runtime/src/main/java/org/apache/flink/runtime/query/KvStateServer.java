@@ -34,9 +34,9 @@ public interface KvStateServer {
 	InetSocketAddress getServerAddress();
 
 
-	/** Starts the server. */
+	/** 开启server */
 	void start() throws Throwable;
 
-	/** Shuts down the server and all related thread pools. */
+	/** 关闭服务和所有相关的线程池 */
 	void shutdown();
 }

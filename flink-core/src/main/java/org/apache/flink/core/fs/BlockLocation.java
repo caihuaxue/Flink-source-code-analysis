@@ -29,6 +29,7 @@ import java.io.IOException;
 public interface BlockLocation extends Comparable<BlockLocation> {
 
 	/**
+	 * 内存块放置的hosts
 	 * Get the list of hosts (hostname) hosting this block.
 	 *
 	 * @return A list of hosts (hostname) hosting this block.
@@ -38,6 +39,7 @@ public interface BlockLocation extends Comparable<BlockLocation> {
 	String[] getHosts() throws IOException;
 
 	/**
+	 * 获取与此块关联的文件的开始偏移量。
 	 * Get the start offset of the file associated with this block.
 	 *
 	 * @return The start offset of the file associated with this block.
@@ -45,7 +47,7 @@ public interface BlockLocation extends Comparable<BlockLocation> {
 	long getOffset();
 
 	/**
-	 * Get the length of the block.
+	 * 获取块的长度。
 	 *
 	 * @return the length of the block
 	 */

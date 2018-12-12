@@ -22,6 +22,7 @@ import org.apache.flink.api.common.JobID;
 import org.apache.flink.runtime.jobgraph.JobStatus;
 
 /**
+ * 监视工作状态的观察者接口。
  * Interface for observers that monitor the status of a job.
  */
 public interface JobStatusListener {

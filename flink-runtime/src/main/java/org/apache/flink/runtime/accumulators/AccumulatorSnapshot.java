@@ -28,9 +28,8 @@ import java.io.Serializable;
 import java.util.Map;
 
 /**
- * This class encapsulates a map of accumulators for a single task. It is used
- * for the transfer from TaskManagers to the JobManager and from the JobManager
- * to the Client.
+ * 这个类封装了单任务的累加器映射。
+ * 用来从TaskManager转化JobManager，和从JobManager转化成Client。
  */
 public class AccumulatorSnapshot implements Serializable {
 

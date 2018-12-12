@@ -23,7 +23,7 @@ import org.slf4j.Logger;
 import static org.apache.flink.util.Preconditions.checkNotNull;
 
 /**
- * Utils class for dealing with JVM shutdown hooks.
+ * 用于处理JVM停机钩子回调函数的工具类。
  */
 public class ShutdownHookUtil {
 
@@ -61,7 +61,7 @@ public class ShutdownHookUtil {
 		checkNotNull(logger);
 
 		try {
-			// Add JVM shutdown hook to call shutdown of service
+			// 添加JVM关机回调钩子函数来调用服务关闭
 			Runtime.getRuntime().addShutdownHook(shutdownHook);
 			return true;
 		} catch (IllegalStateException e) {
@@ -73,7 +73,7 @@ public class ShutdownHookUtil {
 	}
 
 	/**
-	 * Removes a shutdown hook from the JVM.
+	 * 从JVM中移除关闭时的钩子回调函数
 	 */
 	public static void removeShutdownHook(final Thread shutdownHook, final String serviceName, final Logger logger) {
 

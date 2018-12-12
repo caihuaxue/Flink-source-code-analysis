@@ -103,6 +103,7 @@ import static org.apache.flink.util.Preconditions.checkNotNull;
 import static org.apache.flink.util.Preconditions.checkState;
 
 /**
+ * Flink本地Minicluster
  * MiniCluster to execute Flink jobs locally.
  */
 public class MiniCluster implements JobExecutorService, AutoCloseableAsync {

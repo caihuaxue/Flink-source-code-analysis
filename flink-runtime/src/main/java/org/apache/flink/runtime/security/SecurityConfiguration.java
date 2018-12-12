@@ -36,12 +36,14 @@ import java.util.List;
 import static org.apache.flink.util.Preconditions.checkNotNull;
 
 /**
+ * 全局的安全配置
  * The global security configuration.
  *
  * <p>See {@link SecurityOptions} for corresponding configuration options.
  */
 public class SecurityConfiguration {
 
+	// 安全模块工厂列表
 	private static final List<SecurityModuleFactory> DEFAULT_MODULES = Collections.unmodifiableList(
 		Arrays.asList(new HadoopModuleFactory(), new JaasModuleFactory(), new ZookeeperModuleFactory()));
 
@@ -63,10 +65,11 @@ public class SecurityConfiguration {
 
 	private final String zkLoginContextName;
 
-	/**
-	 * Create a security configuration from the global configuration.
-	 * @param flinkConf the Flink global configuration.
-*/
+	/** 构造函数
+	 * 从全局配置创建安全配置.
+	 * @param flinkConf  Flink全局配置.
+    */
+
 	public SecurityConfiguration(Configuration flinkConf) {
 		this(flinkConf, DEFAULT_MODULES);
 	}

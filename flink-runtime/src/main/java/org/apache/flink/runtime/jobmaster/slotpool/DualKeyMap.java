@@ -27,6 +27,7 @@ import java.util.Iterator;
 import java.util.Set;
 
 /**
+ * 在两个不同索引下存储值的映射。
  * Map which stores values under two different indices.
  *
  * @param <A> Type of key A

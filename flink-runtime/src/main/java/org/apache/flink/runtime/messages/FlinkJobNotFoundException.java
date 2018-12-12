@@ -22,6 +22,7 @@ import org.apache.flink.api.common.JobID;
 import org.apache.flink.util.FlinkException;
 
 /**
+ * Flink任务找不到异常
  * Exception indicating that we could not find a Flink job with the given job ID.
  */
 public class FlinkJobNotFoundException extends FlinkException {

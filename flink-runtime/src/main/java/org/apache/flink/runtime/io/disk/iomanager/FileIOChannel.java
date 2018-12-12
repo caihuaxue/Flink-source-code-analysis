@@ -27,6 +27,8 @@ import java.util.concurrent.atomic.AtomicInteger;
 import org.apache.flink.util.StringUtils;
 
 /**
+ * Channel表示逻辑上属于同一资源的文件集合。
+ * 一个例子是文件集合，其中包含来自相同流的数据排序运行，稍后将合并在一起。
  * A Channel represents a collection of files that belong logically to the same resource. An example is a collection of
  * files that contain sorted runs of data from the same stream, that will later on be merged together.
  */
@@ -150,6 +152,7 @@ public interface FileIOChannel {
 	}
 
 	/**
+	 * 逻辑上属于同一个信道的枚举器。
 	 * An enumerator for channels that logically belong together.
 	 */
 	public static final class Enumerator {

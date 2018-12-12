@@ -192,7 +192,7 @@ public class ExecutionGraph implements AccessExecutionGraph {
 	/** {@code true} if all source tasks are stoppable. */
 	private boolean isStoppable = true;
 
-	/** All job vertices that are part of this graph. */
+	/** 该图的所有作业顶点。*/
 	private final ConcurrentHashMap<JobVertexID, ExecutionJobVertex> tasks;
 
 	/** All vertices, in the order in which they were created. **/

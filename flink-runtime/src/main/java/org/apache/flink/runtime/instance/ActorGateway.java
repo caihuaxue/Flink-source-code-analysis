@@ -27,6 +27,7 @@ import java.io.Serializable;
 import java.util.UUID;
 
 /**
+ * 接口来抽象与参与者的通信。
  * Interface to abstract the communication with an actor.
  *
  * It allows to avoid direct interaction with an ActorRef.

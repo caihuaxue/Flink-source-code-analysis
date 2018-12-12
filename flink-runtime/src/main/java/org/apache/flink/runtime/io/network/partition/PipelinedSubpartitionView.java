@@ -27,6 +27,7 @@ import java.util.concurrent.atomic.AtomicBoolean;
 import static org.apache.flink.util.Preconditions.checkNotNull;
 
 /**
+ * 查看只在内存中的子分区。
  * View over a pipelined in-memory only subpartition.
  */
 class PipelinedSubpartitionView implements ResultSubpartitionView {

@@ -22,6 +22,7 @@ import java.security.GeneralSecurityException;
 
 /**
  * An installable security module.
+ * 安装的安全模板
  */
 public interface SecurityModule {
 

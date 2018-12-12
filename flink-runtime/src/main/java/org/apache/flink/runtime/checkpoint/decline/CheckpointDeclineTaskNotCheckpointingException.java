@@ -19,6 +19,7 @@
 package org.apache.flink.runtime.checkpoint.decline;
 
 /**
+ * 任务不支持检查点的异常
  * Exception indicating that a checkpoint was declined because a task does not support
  * checkpointing.
  */
